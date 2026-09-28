@@ -1,0 +1,308 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsapp from '../components/FloatingWhatsapp.astro';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
+import Toast from '../components/Toast.astro';
+import HeroVideo from '../components/HeroVideo.astro';
+import { ClientRouter } from 'astro:transitions';
+import { CONTACT_INFO, SITE_METADATA } from '../config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  videoUrl?: string;
+}
+
+const { 
+  title = `${SITE_METADATA.brandName} | Consultoria regulatória em radiodifusão`,
+  description = SITE_METADATA.description,
+  ogImage = "/og-imea-radiodifusao.png",
+  videoUrl
+} = Astro.props;
+
+const siteUrl = Astro.site || new URL(SITE_METADATA.url);
+const pathname = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/+$/, '');
+const canonicalURL = new URL(pathname, siteUrl);
+const canonicalUrl = canonicalURL.toString();
+const absoluteOgImage = new URL(ogImage, siteUrl).toString();
+const seoTitle = title.trim().length > 60 ? `${title.trim().slice(0, 57).trimEnd()}…` : title.trim();
+const seoDescription = description.trim().length > 160
+  ? `${description.trim().slice(0, 157).trimEnd()}…`
+  : description.trim();
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService", "LegalService"],
+      "@id": `${SITE_METADATA.url}/#organization`,
+      "name": "IMEA Radiodifusão",
+      "alternateName": "IMEA",
+      "legalName": CONTACT_INFO.companyName,
+      "url": SITE_METADATA.url,
+      "logo": `${SITE_METADATA.url}/og-imea-radiodifusao.png`,
+      "description": seoDescription,
+      "telephone": "+55-18-98136-0050",
+      "email": CONTACT_INFO.email,
+      "taxID": CONTACT_INFO.cnpj,
+      "foundingDate": CONTACT_INFO.openingDate,
+      "knowsAbout": ["Radiodifusão", "Regulação perante o MCom", "Processos administrativos perante a Anatel"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida da Saudade, 910, Setor Coworking",
+        "addressLocality": "Presidente Prudente",
+        "addressRegion": "SP",
+        "postalCode": "19050-310",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.1225,
+        "longitude": -51.3856
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brasil"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": CONTACT_INFO.email,
+        "telephone": "+55-18-98136-0050",
+        "areaServed": "BR",
+        "availableLanguage": "pt-BR"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços Regulatórios de Radiodifusão e Telecomunicações",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Renovação de Outorga de Rádio e TV",
+              "url": `${SITE_METADATA.url}/solucoes/renovacao-de-outorga`
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Defesa Administrativa Anatel (PADO)",
+              "url": `${SITE_METADATA.url}/solucoes/defesa-administrativa-anatel`
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Outorga e Regularização de Rádio Comunitária (Radcom)",
+              "url": `${SITE_METADATA.url}/radio-comunitaria`
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Consultoria Técnica e Projetos de RF",
+              "url": `${SITE_METADATA.url}/solucoes/consultoria-em-radiodifusao`
+            }
+          }
+        ]
+      },
+      "potentialAction": [
+        {
+          "@type": "CommunicateAction",
+          "name": "Atendimento Oficial via WhatsApp",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://wa.me/5518981360050?text={message}",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        },
+        {
+          "@type": "ContactAction",
+          "name": "Diagnóstico Inicial de Regularidade",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": `${SITE_METADATA.url}/diagnostico-inicial`,
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_METADATA.url}/#website`,
+      "url": SITE_METADATA.url,
+      "name": "IMEA Radiodifusão",
+      "publisher": {
+        "@id": `${SITE_METADATA.url}/#organization`
+      }
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth bg-[#06090e]">
+  <head>
+    <script is:inline>
+      (() => {
+        const savedTheme = localStorage.getItem('imea-theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : systemTheme;
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" type="image/png" href="/logo-imea-radiodifusao.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{seoTitle}</title>
+    <meta name="description" content={seoDescription} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content={SITE_METADATA.brandName} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={seoDescription} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta property="og:image:alt" content={`${SITE_METADATA.brandName} — consultoria para emissoras`} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content={SITE_METADATA.brandName} />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={seoTitle} />
+    <meta property="twitter:description" content={seoDescription} />
+    <meta property="twitter:image" content={absoluteOgImage} />
+    <meta property="twitter:image:alt" content={`${SITE_METADATA.brandName} — consultoria para emissoras`} />
+
+    <!-- AI Agent & Machine Discovery -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs and Autonomous Agents Manifest" />
+
+    <!-- Analytics sem cookies (Umami self-hosted — privacidade by design) -->
+    <script
+      is:inline
+      defer
+      src="https://analytics.sanbernarda.com/script.js"
+      data-website-id="adfc5ac8-84d9-454e-994d-87bc36b7188a"
+    ></script>
+
+    <!-- Fonts: Inter, Plus Jakarta Sans & JetBrains Mono bundled locally via @fontsource (Zero external network requests, Zero preconnect) -->
+    
+    <!-- Structured Data JSON-LD (Schema.org) for Search Engines & AI Crawlers -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <!-- Astro Client Router (transições de página) -->
+    <ClientRouter />
+  </head>
+  <body class="min-h-screen min-h-[100dvh] flex flex-col bg-[#06090e] text-slate-800 font-sans text-base relative antialiased selection:bg-blue-500/20 selection:text-blue-700 overflow-x-clip w-full">
+    
+    <!-- Skip to Main Content (Acessibilidade WCAG 2.2 AA) -->
+    <a 
+      href="#conteudo-principal" 
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-blue-600 focus:text-white focus:rounded-xl focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white text-xs font-bold uppercase tracking-wider transition-all"
+    >
+      Pular para o conteúdo principal
+    </a>
+
+    <!-- CAMADA 6: Filete Especular de Progresso de Leitura/Scroll (Viewport Telemetry) -->
+    <div 
+      id="viewport-progress-bar" 
+      class="fixed top-0 left-0 w-0 h-[2.5px] bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-500 z-[100] pointer-events-none shadow-[0_0_10px_rgba(56,189,248,0.85)] origin-left will-change-[width]"
+      aria-hidden="true"
+    ></div>
+
+    <!-- CAMADA 1: Microtextura Orgânica Cinematográfica (Procedural Film Grain) -->
+    <div 
+      class="cinematic-grain fixed inset-0 pointer-events-none z-[45] opacity-[0.024] mix-blend-overlay"
+      aria-hidden="true"
+    ></div>
+
+    <!-- CAMADA 1: Malha de Luz Aurora Volumétrica de Fundo (Atmospheric Mesh Glow) -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+      <div class="aurora-mesh-orb absolute -top-[12%] left-1/4 w-[700px] h-[550px] bg-blue-600/[0.07] animate-aurora"></div>
+      <div class="aurora-mesh-orb absolute top-[28%] -right-[8%] w-[650px] h-[650px] bg-cyan-500/[0.045] animate-aurora-reverse"></div>
+      <div class="aurora-mesh-orb absolute bottom-[12%] -left-[10%] w-[600px] h-[500px] bg-indigo-600/[0.05] animate-aurora"></div>
+    </div>
+
+    <!-- Announcement Bar with Pulse Beacon -->
+    <aside aria-label="Aviso Regulatório" class="announcement-bar bg-black/25 backdrop-blur-md text-xs py-2 px-4 text-center font-medium relative z-40">
+      <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-center gap-2.5">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="text-slate-400 text-[11px] sm:text-xs">
+          <strong class="text-slate-200 font-semibold">Portarias MCom & Anatel 2026:</strong>
+          Monitoramento preventivo para renovações e editais do PNO.
+        </span>
+        <a 
+          href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20queria%20tirar%20uma%20d%C3%BAvida%20urgente%20sobre%20minha%20outorga.`} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          data-umami-event="WhatsApp — Barra de Aviso"
+          class="hidden sm:inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 transition-colors font-semibold text-[11px] underline underline-offset-2 ml-1 whitespace-nowrap"
+        >
+          Consultar status grátis →
+        </a>
+      </div>
+    </aside>
+
+    <!-- Sticky Navigation Menu -->
+    <Header />
+
+    <!-- Background Hero Video em Loop -->
+    <HeroVideo src={videoUrl} />
+
+    <!-- Main Content Body -->
+    <main id="conteudo-principal" class="flex-grow relative z-10" transition:animate="fade">
+      <slot />
+    </main>
+
+    <!-- Dark Footer -->
+    <Footer />
+
+    <!-- Floating Action Button -->
+    <FloatingWhatsapp />
+
+    <!-- Sticky Mobile CTA (thumb-zone) -->
+    <StickyMobileCTA />
+
+    <!-- Toasts de feedback -->
+    <Toast />
+
+    <!-- Motion & Interaction Engine (Camada 4, 6) -->
+    <script src="../scripts/motion.ts"></script>
+
+    <!-- SanBernarda Universal Attribution Widget -->
+    <script is:inline src="/widgets/sanbernarda-badge.js" async defer></script>
+  </body>
+</html>

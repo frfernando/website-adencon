@@ -1,0 +1,178 @@
+---
+import { CONTACT_INFO, SITE_METADATA } from '../config';
+
+const currentYear = new Date().getFullYear();
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20queria%20tirar%20uma%20d%C3%BAvida%20sobre%20minha%20emissora.`;
+---
+
+<footer class="site-footer-light bg-white text-slate-700 border-t border-slate-200 relative overflow-hidden text-base">
+
+  <!-- Subtle ambient glow in footer -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] bg-blue-600/5 blur-[120px] pointer-events-none"></div>
+
+  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 lg:py-20 relative z-10">
+
+    <!-- Responsive Grid: 1 col on mobile, 2 cols on tablet, 12 cols on desktop -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-8 lg:gap-8">
+
+      <!-- Column 1: Identity & Motto (lg:col-span-4) -->
+      <div class="col-span-1 sm:col-span-2 lg:col-span-4 space-y-4 pr-0 sm:pr-4 lg:pr-10">
+        <a href="/" class="inline-flex items-center group" aria-label="IMEA Radiodifusão - Voltar para início">
+          <picture>
+            <source type="image/webp" srcset="/logo-imea-radiodifusao.webp" />
+            <img
+              src="/logo-imea-radiodifusao.webp"
+              alt="IMEA Radiodifusão"
+              class="w-[190px] sm:w-[230px] lg:w-[270px] h-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              width="270"
+              height="173"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </a>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal text-pretty">
+          A IMEA Radiodifusão presta assessoria técnica e regulatória para emissoras de Rádio e TV, com experiência profissional construída desde 2003.
+        </p>
+        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/[0.08] space-y-1.5">
+          <div class="flex items-center gap-2">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
+            </span>
+            <p class="text-xs sm:text-sm text-white font-mono font-bold uppercase tracking-wider">Sistemas Ativos</p>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 font-mono">Monitoramento CADSE, SEI e DOU em tempo real</p>
+        </div>
+      </div>
+
+      <!-- Column 2: Solutions (lg:col-span-3) -->
+      <div class="col-span-1 lg:col-span-3 space-y-4">
+        <h3 class="text-white text-sm sm:text-base font-mono font-bold uppercase tracking-wider flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          Soluções
+        </h3>
+        <ul class="space-y-2.5 sm:space-y-3 font-normal text-sm sm:text-base">
+          <li>
+            <a href="/solucoes/renovacao-de-outorga" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Renovação de Outorga
+            </a>
+          </li>
+          <li>
+            <a href="/radio-comunitaria" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Rádio Comunitária
+            </a>
+          </li>
+          <li>
+            <a href="/solucoes/defesa-administrativa-anatel" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Defesa Anatel
+            </a>
+          </li>
+          <li>
+            <a href="/solucoes/consultoria-em-radiodifusao" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Consultoria Técnica
+            </a>
+          </li>
+          <li>
+            <a href="/solucoes/contratos-e-documentacao" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Contratos e Societário
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Navigation (lg:col-span-2) -->
+      <div class="col-span-1 lg:col-span-2 space-y-4">
+        <h3 class="text-white text-sm sm:text-base font-mono font-bold uppercase tracking-wider flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          Institucional
+        </h3>
+        <ul class="space-y-2.5 sm:space-y-3 font-normal text-sm sm:text-base">
+          <li>
+            <a href="/" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Início
+            </a>
+          </li>
+          <li>
+            <a href="/sobre" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Sobre Nós
+            </a>
+          </li>
+          <li>
+            <a href="/blog" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Radar Regulatório
+            </a>
+          </li>
+          <li>
+            <a href="/checklist-radio-comunitaria" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Checklist Radcom
+            </a>
+          </li>
+          <li>
+            <a href="/contato" class="text-slate-300 hover:text-white transition-colors flex items-center gap-2 group py-0.5">
+              <span class="text-blue-500 group-hover:translate-x-0.5 transition-transform">›</span> Fale Conosco
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact & Location (lg:col-span-3) -->
+      <div class="col-span-1 sm:col-span-2 lg:col-span-3 space-y-4">
+        <h3 class="text-white text-sm sm:text-base font-mono font-bold uppercase tracking-wider flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          Atendimento
+        </h3>
+        <ul class="space-y-3 font-normal text-sm sm:text-base text-slate-300">
+          <li class="flex items-center gap-3">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href={`tel:${CONTACT_INFO.phone}`} class="hover:text-white transition-colors">
+              {CONTACT_INFO.phone}
+            </a>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+              {CONTACT_INFO.whatsappDisplay}
+            </a>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href={`mailto:${CONTACT_INFO.email}`} class="hover:text-white transition-colors break-all">
+              {CONTACT_INFO.email}
+            </a>
+          </li>
+          <li class="flex items-start gap-3 pt-1">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="text-xs sm:text-sm">{CONTACT_INFO.address}</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Middle Bar: Links Legais de Conformidade -->
+    <div class="border-t border-white/[0.08] mt-10 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono">
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6 text-slate-400">
+        <a href="/politica-de-privacidade" class="hover:text-white transition-colors">Privacidade & LGPD</a>
+        <span class="text-slate-600">•</span>
+        <a href="/termos-de-uso" class="hover:text-white transition-colors">Termos de Uso</a>
+        <span class="text-slate-600">•</span>
+        <a href="/checklist-radio-comunitaria" class="hover:text-white transition-colors">Auditoria Regulatória</a>
+      </div>
+      <div class="text-slate-300 text-center md:text-right">
+        CNPJ: {CONTACT_INFO.cnpj} • Brasília/DF
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Direitos & Atribuição -->
+    <div class="border-t border-white/[0.05] mt-6 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-300">
+      <div class="text-center md:text-left">
+        © {currentYear} {SITE_METADATA.brandName}. Todos os direitos reservados.
+      </div>
+      <div class="flex items-center gap-2">
+        <sanbernarda-badge data-source="imea-radiodifusao" data-text="Criado por: Sanb" data-logo="/widgets/logo-sanbernarda-claro.webp"></sanbernarda-badge>
+      </div>
+    </div>
+
+  </div>
+</footer>

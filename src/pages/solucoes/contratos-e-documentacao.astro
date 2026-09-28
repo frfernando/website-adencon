@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CONTACT_INFO } from '../../config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20preciso%20de%20assessoria%20para%20altera%C3%A7%C3%A3o%20societ%C3%A1ria%20ou%20contratual%20da%20minha%20emissora.`;
+---
+
+<Layout 
+  title="Contratos e alterações societárias no MCom | IMEA"
+  description="Assessoria técnica e jurídica para atas de diretoria, alterações societárias e anuência prévia para cessão de cotas no MCom."
+  videoUrl="/videos/7087636-hd_1366_720_25fps.mp4"
+>
+
+  <!-- Hero Section com Camada 5 Editorial Typography -->
+  <section class="relative bg-gradient-to-b from-[#06090e]/75 via-[#06090e]/50 to-[#06090e] text-white -mt-24 pt-32 pb-20 sm:pt-36 sm:pb-28 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+      <div class="max-w-3xl space-y-6">
+        <a href="/" class="text-sm font-mono font-bold uppercase tracking-wider text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-2 transition-colors whitespace-nowrap">
+          <span>←</span>
+          <span>Voltar para Início</span>
+        </a>
+        
+        <div class="editorial-eyebrow editorial-eyebrow-dark text-emerald-300 border-emerald-500/25 bg-emerald-950/40">
+          <span class="telemetry-dot bg-emerald-400"></span>
+          <span>Direito Societário & Regulação MCom</span>
+        </div>
+        
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-balance">
+          <span class="title-liquid-platinum block">Contratos &</span>
+          <span class="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent block mt-1.5">Alterações Societárias</span>
+        </h1>
+        
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed text-pretty">
+          Regularização e homologação perante o Ministério das Comunicações de alterações em contratos sociais, atas de posse e eleição de diretoria, cessão de cotas e contratos operacionais.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+          <a 
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            data-magnetic
+            class="btn-shimmer-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl shadow-glow-blue transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group shrink-0 border-t border-white/25"
+          >
+            <svg class="w-5 h-5 text-emerald-200 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>Regularizar Quadro Societário</span>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a 
+            href="/diagnostico-inicial" 
+            data-magnetic
+            class="btn-shimmer inline-flex items-center justify-center gap-2.5 bg-white/[0.08] hover:bg-white/[0.15] text-white text-center font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl border border-white/[0.18] backdrop-blur-md transition-all duration-200 whitespace-nowrap group shrink-0 border-t border-white/30"
+          >
+            <svg class="w-5 h-5 text-emerald-300 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Análise Contratual Prévia</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-24 sm:py-32 bg-white text-slate-900 relative">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 space-y-12">
+      <div class="max-w-3xl space-y-4">
+        <div class="editorial-eyebrow editorial-eyebrow-light text-emerald-800 bg-emerald-50 border border-emerald-200/80">
+          <span class="telemetry-dot bg-emerald-600"></span>
+          <span>Compliance Documental MCom</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 text-balance">
+          Obrigatoriedade de Averbação no CADSE / MCom
+        </h2>
+        <p class="text-slate-600 text-base leading-relaxed font-normal text-pretty">
+          Qualquer alteração na gerência, diretoria ou composição societária de uma concessionária ou permissionária de radiodifusão deve ser obrigatoriamente comunicada ao Ministério das Comunicações dentro dos prazos regulamentares.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div 
+          class="modern-card p-8 rounded-3xl border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+          data-spotlight="emerald"
+          data-tilt
+          data-tilt-max="3.5"
+        >
+          <span class="telemetry-badge telemetry-badge-light text-emerald-900 bg-emerald-50 border border-emerald-200/90 relative z-10">
+            <span class="telemetry-dot bg-emerald-600"></span>
+            <span>Atas e Posse</span>
+          </span>
+          <h3 class="font-bold text-slate-900 text-lg relative z-10">Averbação de Atas de Eleição</h3>
+          <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Registro e averbação de nova diretoria para entidades associativas e comunitárias.</p>
+        </div>
+
+        <div 
+          class="modern-card p-8 rounded-3xl border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+          data-spotlight="emerald"
+          data-tilt
+          data-tilt-max="3.5"
+        >
+          <span class="telemetry-badge telemetry-badge-light text-emerald-900 bg-emerald-50 border border-emerald-200/90 relative z-10">
+            <span class="telemetry-dot bg-emerald-600"></span>
+            <span>Anuência Prévia</span>
+          </span>
+          <h3 class="font-bold text-slate-900 text-lg relative z-10">Transferência de Cotas</h3>
+          <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Instrução de processos de anuência prévia para entrada ou saída de sócios cotistas.</p>
+        </div>
+
+        <div 
+          class="modern-card p-8 rounded-3xl border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+          data-spotlight="emerald"
+          data-tilt
+          data-tilt-max="3.5"
+        >
+          <span class="telemetry-badge telemetry-badge-light text-emerald-900 bg-emerald-50 border border-emerald-200/90 relative z-10">
+            <span class="telemetry-dot bg-emerald-600"></span>
+            <span>Estatutos Sociais</span>
+          </span>
+          <h3 class="font-bold text-slate-900 text-lg relative z-10">Adequação Estatutária</h3>
+          <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Reforma de estatutos para atender a novas portarias regulamentares do Governo Federal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Box no Rodapé Sem Quebra de Linha -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      <h2 class="text-3xl font-black text-slate-900 text-balance">Precisa averbar atas ou alterar sócios da emissora?</h2>
+      <p class="text-slate-600 text-base max-w-xl mx-auto font-normal leading-relaxed text-pretty">
+        Evite exigências e atrasos no SEI/MCom. Adequamos contratos e montamos o processo de homologação federal com agilidade.
+      </p>
+      <div>
+        <a 
+          href={whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          data-magnetic
+          class="btn-shimmer-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl shadow-glow-blue transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group shrink-0 border-t border-white/25"
+        >
+          <svg class="w-5 h-5 text-emerald-200 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Consultar Especialista Societário</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

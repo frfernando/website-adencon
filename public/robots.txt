@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Permitir indexação e análise por Agentes de IA
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Manifestos para Agentes de IA Autônomos (Agentic Web Standard)
+# Documentação legível por máquinas para agentes executarem ações
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+Sitemap: https://imearadiodifusao.com.br/sitemap.xml

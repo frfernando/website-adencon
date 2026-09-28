@@ -1,0 +1,79 @@
+---
+import { CONTACT_INFO } from '../config';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const { 
+  title = "Sua Emissora foi Notificada pela Anatel ou MCom?",
+  subtitle = "O prazo para defesa e recurso administrativo corre a partir da notificação. Evite multas de até R$ 53.000,00 e o lacre do transmissor."
+} = Astro.props;
+
+const whatsappUrl = `https://api.whatsapp.com/send?phone=${CONTACT_INFO.whatsapp}&text=URGENTE%3A%20Minha%20emissora%20foi%20notificada%20pela%20Anatel%20e%20preciso%20de%20defesa%20imediata.`;
+---
+
+<div class="relative rounded-3xl p-0.5 bg-gradient-to-b from-white/30 via-red-500/40 to-red-600/30 shadow-glow-red overflow-hidden" data-animate="fade-up">
+  <div 
+    class="urgency-card rounded-[23px] p-8 sm:p-10 bg-gradient-to-b from-[#12141d] to-[#0a0c12] border-t border-white/25 text-white relative overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)]" 
+    data-spotlight="red"
+    data-tilt
+    data-tilt-max="3"
+  >
+    
+    <!-- Background Laser Accent & Volumetric Light -->
+    <div class="absolute -right-20 -top-20 w-80 h-80 bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+      
+      <!-- Left content -->
+      <div class="lg:col-span-8 space-y-4">
+        <div class="editorial-eyebrow editorial-eyebrow-dark text-red-300 border-red-500/30 bg-red-950/40">
+          <span class="telemetry-dot bg-red-400"></span>
+          <span>Plantão Jurídico & Regulatório 24/7</span>
+        </div>
+        
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight text-balance">
+          {title}
+        </h2>
+        
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal text-pretty">
+          {subtitle}
+        </p>
+
+        <div class="pt-2 flex flex-wrap gap-2.5 text-xs font-mono">
+          <div class="telemetry-badge telemetry-badge-dark text-red-200 border-red-500/30 bg-red-950/30">
+            <span class="telemetry-dot bg-red-400"></span>
+            <span>Auto de Infração (PADO)</span>
+          </div>
+          <div class="telemetry-badge telemetry-badge-dark text-red-200 border-red-500/30 bg-red-950/30">
+            <span class="telemetry-dot bg-red-400"></span>
+            <span>Fiscalização de Potência</span>
+          </div>
+          <div class="telemetry-badge telemetry-badge-dark text-red-200 border-red-500/30 bg-red-950/30">
+            <span class="telemetry-dot bg-red-400"></span>
+            <span>Transmissor Sem Selo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Action CTA Button Sem Quebra de Linha (Shimmer & Magnetic Integrados) -->
+      <div class="lg:col-span-4 flex lg:justify-end">
+        <a 
+          href={whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          data-magnetic
+          class="btn-shimmer-auto w-full sm:w-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-red-600 hover:bg-red-500 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl shadow-glow-red transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group shrink-0 border-t border-white/25"
+        >
+          <svg class="w-5 h-5 text-red-200 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          <span>Acionar Plantão de Defesa</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>

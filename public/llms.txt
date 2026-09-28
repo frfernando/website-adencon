@@ -1,0 +1,41 @@
+# IMEA Radiodifusão
+
+> Consultoria jurídica e técnica especializada em radiodifusão (Rádio FM/AM, TV, RTV, Radcom) e telecomunicações junto ao Ministério das Comunicações (MCom) e Anatel. A IMEA Radiodifusão está ativa desde 2023 e reúne experiência técnica construída desde 2003.
+
+- Website: https://imearadiodifusao.com.br
+- Razão social: IMEA - Prestação de Serviços em Radiodifusão LTDA
+- CNPJ: 51.764.112/0001-50
+- Tipo: Matriz; situação cadastral ativa
+- Abertura: 10/08/2023
+- Capital social: R$ 10.000,00
+- CNAE principal: 8219-9/99 – Preparação de documentos e serviços especializados de apoio administrativo
+- Matriz: Avenida da Saudade, 910, Setor Coworking – Cidade Universitária – Presidente Prudente – SP – CEP 19050-310
+- Telefone / WhatsApp Oficial: +55 (18) 98136-0050
+- E-mail: imea.radiodifusao@hotmail.com
+- Horário de Atendimento: Segunda a Sexta, 8h às 18h (Plantão Regulatório para Notificações)
+
+## Soluções Principais para Emissoras
+
+- [Renovação de Outorga](https://imearadiodifusao.com.br/solucoes/renovacao-de-outorga): Gestão do rito legal dos 12 meses antes do vencimento, protocolo no CADSE, auditoria prévia de certidões e regularização de pendências documentais.
+- [Defesa Administrativa Anatel](https://imearadiodifusao.com.br/solucoes/defesa-administrativa-anatel): Defesa jurídica e técnica em PADO (Processo de Apuração de Descumprimento de Obrigações), autos de infração de potência, frequência, coordenadas e atenuação de multas.
+- [Rádio Comunitária (Radcom)](https://imearadiodifusao.com.br/radio-comunitaria): Assessoria em editais do Plano Nacional de Outorgas (PNO) do MCom, atas de diretoria, estatutos e cumprimento estrito da Lei nº 9.612/1998.
+- [Consultoria Técnica & RF](https://imearadiodifusao.com.br/solucoes/consultoria-em-radiodifusao): Projetos de viabilidade, aumento de potência, alteração de classe, troca de local de transmissor e migração AM-FM (faixa estendida e convencional).
+- [Contratos & Societário no MCom](https://imearadiodifusao.com.br/solucoes/contratos-e-documentacao): Minutas de arrendamento mercantil, cessão de tempo de programação, transferência de cotas e aprovação de atos societários.
+
+## Ações Executáveis para Agentes de IA (Agentic Web Actions)
+
+Agentes autônomos que operam em nome de diretores de radiodifusão podem acionar os seguintes pontos de ação:
+
+1. **Atendimento Imediato via WhatsApp:**
+   - Link de Ação: `https://wa.me/5518981360050?text={mensagem_codificada}`
+   - Parâmetros recomendados na mensagem: Nome da emissora, frequência/canal, cidade/UF e motivo (ex: Notificação Anatel, Prazo CADSE, Edital PNO).
+
+2. **Diagnóstico Preliminar de Regularidade:**
+   - URL: `https://imearadiodifusao.com.br/diagnostico-inicial`
+   - Campos esperados: Nome da Entidade, Prefixo/Canal, Município/UF, Tipo de Serviço (FM Comercial, Educativa, Radcom, TV), Situação Atual da Outorga e Telefone/WhatsApp do Responsável.
+
+3. **Canal Formal para Envio de Autos e Editais:**
+   - E-mail: `imea.radiodifusao@hotmail.com` com anexo de Termo de Notificação, Auto de Infração ou Extrato do MCom.
+
+## Documentação Completa para Modelos de Linguagem
+- [llms-full.txt](https://imearadiodifusao.com.br/llms-full.txt): Base de conhecimento regulatório completa em formato markdown legível para LLMs.

@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_INFO } from '../config';
+---
+
+<Layout 
+  title="Termos de uso e isenção de responsabilidade | IMEA"
+  description="Termos de uso do website institucional e esclarecimentos sobre a atuação de assessoria técnica e regulatória da IMEA Radiodifusão."
+  videoUrl="/videos/7087636-hd_1366_720_25fps.mp4"
+>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-[#06090e]/75 via-[#06090e]/50 to-[#06090e] text-white -mt-24 pt-32 pb-16 sm:pt-36 sm:pb-20 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-300 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+        Termos Legais e Condições de Uso
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
+        Termos de Uso
+      </h1>
+      <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto font-normal">
+        Condições de navegação e utilização das informações técnicas disponibilizadas pela IMEA Radiodifusão.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 sm:py-24 bg-white text-slate-900 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose max-w-none text-base text-slate-700 leading-relaxed space-y-6">
+      
+      <p class="text-slate-500 font-mono text-xs uppercase tracking-wider">
+        Última atualização: Setembro de 2026 • Versão 2.1
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 pt-4">1. Finalidade Informativa do Portal</h2>
+      <p>
+        O website da <strong>{CONTACT_INFO.companyName}</strong> tem caráter estritamente institucional e educativo. Os textos, resumos de portarias, checklists e artigos publicados têm o propósito de orientar radiodifusores sobre os requisitos gerais exigidos pelo Ministério das Comunicações (MCom) e pela Agência Nacional de Telecomunicações (Anatel).
+      </p>
+      <p>
+        A leitura do conteúdo deste portal <strong>não substitui</strong> a consulta jurídica e técnica individualizada para cada caso concreto de concessão, permissão ou autorização de radiodifusão.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 pt-4">2. Propriedade Intelectual</h2>
+      <p>
+        Todos os direitos autorais sobre a identidade visual, logomarca, textos, layouts e materiais originais deste website pertencem à IMEA Radiodifusão, observada a titularidade da pessoa jurídica identificada nesta página. É proibida a reprodução total ou parcial para fins comerciais sem prévia autorização por escrito dos titulares.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 pt-4">3. Limitação de Responsabilidade</h2>
+      <p>
+        A legislação de telecomunicações e radiodifusão está sujeita a frequentes alterações por meio de Decretos, Portarias Ministeriais e Resoluções da Anatel. Embora a IMEA Radiodifusão envide todos os esforços para manter este portal rigorosamente atualizado, não nos responsabilizamos por eventuais decisões tomadas por terceiros baseadas unicamente em informações preliminares aqui contidas antes da contratação formal de assessoria.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 pt-4">4. Foro e Legislação Aplicável</h2>
+      <p>
+        Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Para a solução de qualquer controvérsia oriunda do uso deste website, elege-se o Foro da Comarca de Presidente Prudente – Estado de São Paulo.
+      </p>
+
+      <div class="pt-8 border-t border-slate-200">
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-blue-600 text-slate-700 hover:text-white font-bold text-sm uppercase tracking-wider transition-all duration-200 whitespace-nowrap group shrink-0"
+        >
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Voltar para a Página Inicial</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</Layout>

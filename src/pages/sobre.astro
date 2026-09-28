@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_INFO } from '../config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20da%20IMEA%20Radiodifus%C3%A3o.`;
+---
+
+<Layout 
+  title="Sobre a IMEA Radiodifusão | Mais de 20 anos"
+  description="Conheça a IMEA Radiodifusão, empresa ativa desde 2023 e formada por profissionais com mais de 20 anos de experiência em radiodifusão."
+  videoUrl="/videos/7087636-hd_1366_720_25fps.mp4"
+>
+
+  <!-- Hero Sobre -->
+  <section class="relative bg-gradient-to-b from-[#06090e]/75 via-[#06090e]/50 to-[#06090e] text-white -mt-24 pt-32 pb-20 sm:pt-36 sm:pb-28 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10" data-animate="fade-up">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-300 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+        Tradição, Ética e Eficiência Federal
+      </div>
+      
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
+        Mais de 20 Anos Protegendo a <span class="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Radiodifusão Brasileira</span>
+      </h1>
+      
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+        Sediada em Presidente Prudente – SP e com atuação permanente em Brasília, a IMEA Radiodifusão atua na assessoria regulatória, técnica e jurídica de concessionárias de rádio e televisão.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <a 
+          href={whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl shadow-glow-blue transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group shrink-0"
+        >
+          <svg class="w-5 h-5 text-cyan-300 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>Falar com Nossos Fundadores</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <a 
+          href="/servicos" 
+          class="inline-flex items-center justify-center gap-2.5 bg-white/[0.08] hover:bg-white/[0.15] text-white text-center font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl border border-white/[0.18] backdrop-blur-md transition-all duration-200 whitespace-nowrap group shrink-0"
+        >
+          <svg class="w-5 h-5 text-blue-300 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+          <span>Conhecer Nossos Serviços</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- História e Sócios (Clean Surface) -->
+  <section class="py-20 sm:py-28 bg-white text-slate-900">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 space-y-16">
+      
+      <div class="max-w-3xl space-y-6">
+        <h2 class="text-3xl font-black text-slate-900">Nossa Filosofia de Atuação</h2>
+        <p class="text-slate-600 text-base leading-relaxed">
+            A IMEA Radiodifusão atua com a missão clara de fornecer consultoria ética e verdadeira. A empresa está ativa desde 10 de agosto de 2023 e reúne experiência técnica construída desde 2003, com conhecimento aprofundado das normas do MCom e dos regulamentos da Anatel.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="modern-card p-8 rounded-3xl border border-slate-200 bg-slate-50/50 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xl">
+            IA
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">Dr. Ivan Alves</h3>
+          <span class="text-xs font-mono text-blue-600 font-bold uppercase tracking-wider block">Sócio-Administrador & Advogado Regulatório</span>
+          <p class="text-slate-600 text-sm leading-relaxed font-normal">
+            Especialista em regulação das telecomunicações e radiodifusão com mais de duas décadas de experiência perante o Ministério das Comunicações, Anatel e tribunais federais.
+          </p>
+        </div>
+
+        <div class="modern-card p-8 rounded-3xl border border-slate-200 bg-slate-50/50 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xl">
+            IR
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">Iara Marques Roberto Alves</h3>
+          <span class="text-xs font-mono text-blue-600 font-bold uppercase tracking-wider block">Sócia-Administradora & Gestora de Processos</span>
+          <p class="text-slate-600 text-sm leading-relaxed font-normal">
+            Responsável pela governança administrativa, instrução rigorosa dos processos cadastrais no CADSE/SEI e relacionamento transparente com emissoras de todo o Brasil.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Box no Rodapé Sem Quebra de Linha -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      <h2 class="text-3xl font-black text-slate-900">Agende uma reunião direta com nossos diretores</h2>
+      <p class="text-slate-600 text-base max-w-xl mx-auto font-normal leading-relaxed">
+        Estamos prontos para atender a sua emissora em Presidente Prudente ou online com a mesma dedicação de sempre.
+      </p>
+      <div>
+        <a 
+          href={whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl shadow-glow-blue transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group shrink-0"
+        >
+          <svg class="w-5 h-5 text-cyan-300 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Iniciar Atendimento Personalizado</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

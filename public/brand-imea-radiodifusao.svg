@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 72" role="img" aria-labelledby="title desc">
+  <title id="title">IMEA Radiodifusão</title>
+  <desc id="desc">Identidade visual textual da IMEA Radiodifusão</desc>
+  <rect width="58" height="58" x="2" y="7" rx="16" fill="#2563eb"/>
+  <path d="M18 50V22h8v28h-8Zm18 0V22h8v28h-8Z" fill="#fff"/>
+  <path d="M14 18c12-10 28-10 40 0M10 12C26-2 42-2 54 12" fill="none" stroke="#67e8f9" stroke-linecap="round" stroke-width="3"/>
+  <text x="76" y="34" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="1.4">IMEA</text>
+  <text x="78" y="56" fill="#67e8f9" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2.6">RADIODIFUSÃO</text>
+</svg>

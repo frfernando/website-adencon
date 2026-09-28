@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_INFO } from '../config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20fiz%20o%20checklist%20da%20r%C3%A1dio%20comunit%C3%A1ria%20e%20gostaria%20de%20ajuda%20para%20regularizar%20minha%20associa%C3%A7%C3%A3o.`;
+---
+
+<Layout 
+  title="Checklist de conformidade para rádio comunitária | IMEA"
+  description="Verifique gratuitamente os requisitos essenciais para manter a outorga da sua rádio comunitária em dia perante o Ministério das Comunicações e Anatel."
+  videoUrl="/videos/7087636-hd_1366_720_25fps.mp4"
+>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-[#06090e]/75 via-[#06090e]/50 to-[#06090e] text-white -mt-24 pt-32 pb-20 sm:pt-36 sm:pb-28 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+      <a href="/radio-comunitaria" class="text-sm font-mono font-bold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-2 transition-colors whitespace-nowrap">
+        <span>←</span>
+        <span>Voltar para Rádio Comunitária</span>
+      </a>
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        Auditoria Rápida de Conformidade
+      </div>
+      
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
+        Checklist de Requisitos para <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">Rádio Comunitária</span>
+      </h1>
+      
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+        Verifique os principais itens de conformidade cadastral, societária e técnica exigidos pelo Ministério das Comunicações e pela Anatel.
+      </p>
+    </div>
+  </section>
+
+  <!-- Checklist Interativo -->
+  <section class="py-20 sm:py-28 bg-white text-slate-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+      <!-- Bloco 1: Documentação Societária -->
+      <div class="space-y-6">
+        <div class="border-b border-slate-200 pb-3">
+          <h2 class="text-xl font-bold text-slate-900">1. Documentação da Associação Mantenedora</h2>
+          <p class="text-slate-500 text-xs mt-1">Obrigações perante Cartório de Registro Civil e MCom</p>
+        </div>
+
+        <div class="space-y-4">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Estatuto Social registrado em cartório e em conformidade com as exigências da Lei nº 9.612/1998.</span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Ata de Eleição e Posse da Diretoria atualizada, registrada e dentro do prazo de vigência do mandato.</span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Todos os dirigentes possuem residência comprovada dentro da área de cobertura da emissora (raio de 1 km).</span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">CNPJ ativo na Receita Federal com os dados do presidente atualizados no QSA.</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Bloco 2: Certidões e Regularidade Fiscal -->
+      <div class="space-y-6">
+        <div class="border-b border-slate-200 pb-3">
+          <h2 class="text-xl font-bold text-slate-900">2. Certidões e Regularidade Fiscal</h2>
+          <p class="text-slate-500 text-xs mt-1">Exigidas em qualquer requerimento junto ao MCom</p>
+        </div>
+
+        <div class="space-y-4">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Certidão Negativa de Débitos Federais (PGFN / Receita Federal) válida da Entidade.</span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Certidão de Regularidade do FGTS (CRF) atualizada.</span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Certidão Negativa de Débitos Trabalhistas (CNDT) em dia.</span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Certidões negativas cíveis e criminais de todos os membros da Diretoria.</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Bloco 3: Aspectos Técnicos e Anatel -->
+      <div class="space-y-6">
+        <div class="border-b border-slate-200 pb-3">
+          <h2 class="text-xl font-bold text-slate-900">3. Conformidade Técnica e Parque Transmissor</h2>
+          <p class="text-slate-500 text-xs mt-1">Exigências fiscalizadas pela Anatel</p>
+        </div>
+
+        <div class="space-y-4">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Operação na potência máxima autorizada de 25 Watts ERP e canal correspondente (Canal 200 / 87,9 MHz ou canal específico atribuído).</span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Antena instalada nas coordenadas geográficas e altura exatamente autorizadas na licença de funcionamento.</span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Transmissor devidamente homologado pela Anatel e com selo de identificação visível.</span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" class="w-5 h-5 rounded text-cyan-600 border-slate-300 mt-0.5 focus:ring-cyan-500" />
+            <span class="text-sm text-slate-700 font-medium">Responsável técnico habilitado com ART (Anotação de Responsabilidade Técnica) ativa no CREA.</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="text-center pt-6 space-y-4">
+        <p class="text-slate-600 text-sm">Falta algum documento ou sua certidão está vencida?</p>
+        <a 
+          href={whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:brightness-110 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl shadow-glow-cyan transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group shrink-0"
+        >
+          <svg class="w-5 h-5 text-cyan-200 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19.1"/></svg>
+          <span>Regularizar pendências com a IMEA Radiodifusão</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</Layout>

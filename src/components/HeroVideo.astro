@@ -1,0 +1,102 @@
+---
+interface Props {
+  initialVideo?: string;
+  src?: string;
+}
+
+const { initialVideo, src } = Astro.props;
+const currentVideo = src || initialVideo || "/videos/1998560-hd_1280_720_24fps.mp4";
+---
+
+<div 
+  id="hero-video-wrapper"
+  transition:persist="hero-video-persistent-wrapper" 
+  class="fixed inset-0 overflow-hidden pointer-events-none z-0" 
+>
+  <!-- Single persistent looping background video player (desktop; mobile usa gradiente estático p/ LCP) -->
+  <video 
+    id="hero-bg-video" 
+    aria-hidden="true"
+    transition:persist="hero-bg-video-player"
+    autoplay 
+    muted 
+    loop
+    playsinline 
+    preload="none" 
+    class="hero-bg-video absolute inset-0 w-full h-full object-cover opacity-[0.38] transition-opacity duration-500 hidden md:block" 
+    data-src={currentVideo}
+  ></video>
+
+  <!-- Camada 1: Ambient gradient overlays com vinheta volumétrica cinematográfica -->
+  <div class="hero-video-overlay hero-video-overlay-horizontal absolute inset-0 bg-gradient-to-r from-[#06090e]/65 via-[#06090e]/20 to-transparent"></div>
+  <div class="hero-video-overlay hero-video-overlay-vertical absolute inset-0 bg-gradient-to-b from-[#06090e]/15 via-transparent to-[#06090e]/75"></div>
+  <div class="hero-video-glow absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[480px] bg-gradient-to-b from-blue-500/[0.04] to-transparent pointer-events-none"></div>
+</div>
+
+<script>
+  (function initPersistentVideoPlaylist() {
+    // Economia de dados no mobile: remove o player e mantém só o fundo em gradiente.
+    // (O <video> já nasce hidden no mobile; aqui evitamos download e playlist.)
+    var isMobile = window.matchMedia('(max-width: 767px)').matches;
+    var connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+    var saveData = connection?.saveData === true;
+    if (isMobile || saveData) {
+      var stale = document.getElementById('hero-bg-video');
+      if (stale) stale.remove();
+      return;
+    }
+
+    const playlist = [
+      "/videos/1998560-hd_1280_720_24fps.mp4",
+      "/videos/7087636-hd_1366_720_25fps.mp4",
+      "/videos/7586534-hd_1280_720_24fps.mp4"
+    ];
+
+    function setupPlayer() {
+      const video = document.getElementById('hero-bg-video') as HTMLVideoElement | null;
+      if (!video) return;
+
+      if (!video.src && video.dataset.src) {
+        video.src = video.dataset.src;
+      }
+
+      // Ensure video configuration for browser autoplay policies
+      video.muted = true;
+      video.playsInline = true;
+
+      // Playback speed optimization
+      video.playbackRate = 0.85;
+
+      const handleEnded = () => {
+        const currentSrc = video.getAttribute('src');
+        let currentIndex = playlist.indexOf(currentSrc || '');
+        if (currentIndex === -1) currentIndex = 0;
+        const nextIndex = (currentIndex + 1) % playlist.length;
+        
+        video.style.opacity = '0.2';
+        setTimeout(() => {
+          video.src = playlist[nextIndex];
+          video.play().catch(() => {});
+          video.style.opacity = '0.38';
+        }, 300);
+      };
+
+      video.removeEventListener('ended', handleEnded);
+      video.addEventListener('ended', handleEnded);
+
+      // Verify video is playing
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupPlayer);
+    } else {
+      setupPlayer();
+    }
+
+    document.addEventListener('astro:page-load', setupPlayer);
+  })();
+</script>

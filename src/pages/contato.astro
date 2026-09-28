@@ -1,0 +1,459 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_INFO } from '../config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20da%20IMEA%20Radiodifus%C3%A3o.`;
+const mapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('IMEA Radiodifusão Presidente Prudente SP ' + CONTACT_INFO.address)}`;
+---
+
+<Layout 
+  title="Fale com a IMEA Radiodifusão | Atendimento nacional"
+  description="Entre em contato com nossa equipe em Presidente Prudente/SP. Atendimento especializado em outorgas, defesas Anatel e regulação de radiodifusão."
+  videoUrl="/videos/7087636-hd_1366_720_25fps.mp4"
+>
+
+  <!-- Hero Contato com Camada 5 Editorial Typography -->
+  <section class="relative bg-gradient-to-b from-[#06090e]/75 via-[#06090e]/50 to-[#06090e] text-white -mt-24 pt-32 pb-20 sm:pt-36 sm:pb-28 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10" data-animate="fade-up">
+      <div class="editorial-eyebrow editorial-eyebrow-dark text-blue-300 border-blue-500/25">
+        <span class="telemetry-dot bg-blue-400"></span>
+        <span>Canais Oficiais de Atendimento</span>
+      </div>
+      
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-balance">
+        <span class="title-liquid-platinum block">Fale Conosco e Proteja a sua</span>
+        <span class="title-liquid-cyan block mt-1.5">Concessão</span>
+      </h1>
+      
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed text-pretty">
+        Nossa equipe está à disposição para atendimento presencial em nossa sede ou virtualmente para emissoras de todo o Brasil.
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção de Canais Rápidos (Clean Surface com Especular Inset, Spotlight e Tilt 3D) -->
+  <section class="py-12 bg-white text-slate-900 border-b border-slate-100">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- WhatsApp -->
+        <a 
+          href={whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          data-spotlight="emerald"
+          data-tilt
+          data-tilt-max="3.5"
+          class="modern-card p-6 rounded-3xl border border-slate-200 hover:border-emerald-500 bg-emerald-50/20 transition-all group block shadow-[0_1px_3px_rgba(15,23,42,0.03),0_12px_28px_-4px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,1)] overflow-hidden"
+        >
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.3z"/></svg>
+            </div>
+            <span class="telemetry-badge telemetry-badge-light text-emerald-900 bg-emerald-50 border border-emerald-200/90 mb-2">
+              <span class="telemetry-dot bg-emerald-600"></span>
+              <span>Plantão WhatsApp</span>
+            </span>
+            <p class="font-bold text-slate-900 text-sm">{CONTACT_INFO.whatsappDisplay}</p>
+            <span class="text-xs text-slate-500 mt-1 block">Resposta imediata</span>
+          </div>
+        </a>
+
+        <!-- Telefone Fixo -->
+        <a 
+          href={`tel:${CONTACT_INFO.phone}`}
+          data-spotlight="blue"
+          data-tilt
+          data-tilt-max="3.5"
+          class="modern-card p-6 rounded-3xl border border-slate-200 hover:border-blue-500 bg-blue-50/20 transition-all group block shadow-[0_1px_3px_rgba(15,23,42,0.03),0_12px_28px_-4px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,1)] overflow-hidden"
+        >
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span class="telemetry-badge telemetry-badge-light text-blue-900 bg-blue-50 border border-blue-200/90 mb-2">
+              <span class="telemetry-dot bg-blue-600"></span>
+              <span>Telefone da Sede</span>
+            </span>
+            <p class="font-bold text-slate-900 text-sm">{CONTACT_INFO.phone}</p>
+            <span class="text-xs text-slate-500 mt-1 block">Segunda a Sexta, 8h às 18h</span>
+          </div>
+        </a>
+
+        <!-- E-mail -->
+        <a 
+          href={`mailto:${CONTACT_INFO.email}`}
+          data-spotlight="indigo"
+          data-tilt
+          data-tilt-max="3.5"
+          class="modern-card p-6 rounded-3xl border border-slate-200 hover:border-indigo-500 bg-indigo-50/20 transition-all group block shadow-[0_1px_3px_rgba(15,23,42,0.03),0_12px_28px_-4px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,1)] overflow-hidden"
+        >
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <span class="telemetry-badge telemetry-badge-light text-indigo-900 bg-indigo-50 border border-indigo-200/90 mb-2">
+              <span class="telemetry-dot bg-indigo-600"></span>
+              <span>E-mail Corporativo</span>
+            </span>
+            <p class="font-bold text-slate-900 text-xs sm:text-sm truncate">{CONTACT_INFO.email}</p>
+            <span class="text-xs text-slate-500 mt-1 block">Envio formal de editais e autos</span>
+          </div>
+        </a>
+
+        <!-- Localização -->
+        <a 
+          href={mapsSearchUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          data-spotlight="gold"
+          data-tilt
+          data-tilt-max="3.5"
+          class="modern-card p-6 rounded-3xl border border-slate-200 hover:border-amber-500 bg-amber-50/20 transition-all group block shadow-[0_1px_3px_rgba(15,23,42,0.03),0_12px_28px_-4px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,1)] overflow-hidden"
+        >
+          <div class="relative z-10">
+            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span class="telemetry-badge telemetry-badge-light text-amber-900 bg-amber-50 border border-amber-200/90 mb-2">
+              <span class="telemetry-dot bg-amber-600"></span>
+              <span>Sede em SP</span>
+            </span>
+            <p class="font-bold text-slate-900 text-xs sm:text-sm">Presidente Prudente – SP</p>
+            <span class="text-xs text-slate-500 mt-1 block">Atendimento com hora marcada</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Seção Principal: Formulário de Contato + Localização Interativa com Mapa -->
+  <section class="py-16 sm:py-24 bg-slate-50 text-slate-900">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        
+        <!-- Formulário de Contato Direto (7 colunas) com Spotlight e Tilt -->
+        <div 
+          class="lg:col-span-7 modern-card rounded-3xl p-8 sm:p-10 border-t-2 border-t-blue-500 border-x border-slate-200/80 border-b border-slate-200/60 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.03),0_12px_28px_-4px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,1)] space-y-6 relative overflow-hidden"
+          data-spotlight="blue"
+          data-tilt
+          data-tilt-max="2"
+        >
+          
+          <div class="space-y-3 relative z-10">
+            <div class="editorial-eyebrow editorial-eyebrow-light text-blue-700 bg-blue-50 border border-blue-200/80">
+              <span class="telemetry-dot bg-blue-600"></span>
+              <span>Envio Direto</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight text-balance">
+              Envie sua Mensagem para Nossa Equipe Técnica
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-normal text-pretty">
+              Preencha os dados da sua emissora abaixo. Retornaremos o contato em menos de 2 horas úteis com uma avaliação prévia.
+            </p>
+          </div>
+
+          <form id="contact-form" class="space-y-6 relative z-10">
+            <!-- Honeypot anti-bot (invisível; robôs preenchem, humanos não) -->
+            <input type="text" name="website" id="contact-website" value="" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="contact-name" class="block text-xs font-mono font-bold uppercase text-slate-700">
+                  Nome do Responsável *
+                </label>
+                <input 
+                  type="text" 
+                  id="contact-name" 
+                  name="name" 
+                  required 
+                  autocomplete="name"
+                  placeholder="Seu nome completo" 
+                  class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label for="contact-phone" class="block text-xs font-mono font-bold uppercase text-slate-700">
+                  Telefone / WhatsApp *
+                </label>
+                <input 
+                  type="tel" 
+                  id="contact-phone" 
+                  name="phone" 
+                  required 
+                  autocomplete="tel"
+                  inputmode="tel"
+                  placeholder="(00) 00000-0000" 
+                  class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="contact-email" class="block text-xs font-mono font-bold uppercase text-slate-700">
+                  E-mail de Contato *
+                </label>
+                <input 
+                  type="email" 
+                  id="contact-email" 
+                  name="email" 
+                  required 
+                  autocomplete="email"
+                  inputmode="email"
+                  placeholder="contato@emissora.com.br" 
+                  class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label for="contact-station" class="block text-xs font-mono font-bold uppercase text-slate-700">
+                  Emissora / Município / UF
+                </label>
+                <input 
+                  type="text" 
+                  id="contact-station" 
+                  name="station" 
+                  autocomplete="organization"
+                  placeholder="Ex: Rádio Esperança FM - SP" 
+                  class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+                />
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label for="contact-subject" class="block text-xs font-mono font-bold uppercase text-slate-700">
+                Assunto Principal *
+              </label>
+              <select 
+                id="contact-subject" 
+                name="subject" 
+                required
+                class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+              >
+                <option value="Renovação de Outorga (CADSE/MCom)">Renovação de Outorga (Prazo de 12 Meses)</option>
+                <option value="Rádio Comunitária (Radcom / PNO)">Rádio Comunitária (Editais PNO / Atas de Diretoria)</option>
+                <option value="Defesa contra Notificação Anatel / PADO">Defesa contra Notificação da Anatel / PADO / Multa</option>
+                <option value="Migração AM-FM ou Aumento de Potência">Engenharia / Migração AM-FM / Mudança de Classe</option>
+                <option value="Alterações Societárias no MCom">Alterações Societárias / Homologação SEI</option>
+                <option value="Outro assunto">Outro assunto / Dúvida geral</option>
+              </select>
+            </div>
+
+            <div class="space-y-2">
+              <label for="contact-message" class="block text-xs font-mono font-bold uppercase text-slate-700">
+                Mensagem ou Detalhes da Solicitação *
+              </label>
+              <textarea 
+                id="contact-message" 
+                name="message" 
+                rows="4" 
+                required
+                placeholder="Descreva brevemente a situação da sua outorga ou necessidade da emissora..." 
+                class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              data-magnetic
+              data-umami-event="Contato — Envio"
+              class="btn-shimmer-auto w-full inline-flex items-center justify-center gap-2.5 sm:gap-3 px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-glow-blue transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group cursor-pointer border-t border-white/25"
+            >
+              <svg class="w-5 h-5 text-cyan-300 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span>Enviar Mensagem</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+
+            <div id="form-feedback" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-medium text-center">
+              ✓ Mensagem preparada com sucesso! Redirecionando para envio prioritário...
+            </div>
+          </form>
+
+        </div>
+
+        <!-- Localização da Sede & Mapa Google Maps (5 colunas) com Spotlight e Tilt -->
+        <div class="lg:col-span-5 space-y-8">
+          
+          <!-- Card Institucional da Sede com Especular Inset -->
+          <div 
+            class="modern-card rounded-3xl p-8 border-t-2 border-t-blue-500 border-x border-slate-200/80 border-b border-slate-200/60 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.03),0_12px_28px_-4px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,1)] space-y-5 relative overflow-hidden"
+            data-spotlight="blue"
+            data-tilt
+            data-tilt-max="2.5"
+          >
+            <div class="space-y-3 relative z-10">
+              <span class="telemetry-badge telemetry-badge-light text-blue-900 bg-blue-50 border border-blue-200/90">
+                <span class="telemetry-dot bg-blue-600"></span>
+                <span>Atendimento Presencial & Virtual</span>
+              </span>
+              <h3 class="text-xl font-bold text-slate-900">Sede Administrativa</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Nossa matriz está sediada estrategicamente em Presidente Prudente/SP, com capacidade operacional e jurídica para representar clientes perante todos os polos regionais da Anatel e Ministério das Comunicações em Brasília.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100 space-y-3 text-sm text-slate-700 relative z-10">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>{CONTACT_INFO.address}</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-blue-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Atendimento: Seg à Sex das 08h às 18h</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-600 relative z-10">
+              <div>
+                <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">CNPJ</span>
+                <span class="font-semibold text-slate-800">{CONTACT_INFO.cnpj}</span>
+              </div>
+              <div>
+                <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Tipo societário</span>
+                <span class="font-semibold text-slate-800">{CONTACT_INFO.legalEntityType}</span>
+              </div>
+              <div>
+                <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Abertura</span>
+                <span class="font-semibold text-slate-800">{CONTACT_INFO.openingDateDisplay}</span>
+              </div>
+              <div>
+                <span class="block text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Capital social</span>
+                <span class="font-semibold text-slate-800">{CONTACT_INFO.capitalSocial}</span>
+              </div>
+            </div>
+
+            <div class="pt-2 relative z-10">
+              <a 
+                href={mapsSearchUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-shimmer inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100/70 border border-blue-200/90 px-4 py-2.5 rounded-xl transition-all whitespace-nowrap group"
+              >
+                <span>Abrir rota no Google Maps</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mapa Interativo do Google Maps com Dark Frame e Telemetria -->
+          <div class="rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl bg-[#090d16] text-white">
+            <div class="p-4 bg-[#0a0f1a] border-b border-white/10 flex items-center justify-between text-xs font-mono">
+              <div class="editorial-eyebrow editorial-eyebrow-dark text-emerald-300 bg-emerald-950/40 border border-emerald-500/25">
+                <span class="telemetry-dot bg-emerald-400"></span>
+                <span>OpenStreetMap • Mapa interativo</span>
+              </div>
+              <span class="text-slate-400 text-[11px] hidden sm:inline">Presidente Prudente, SP</span>
+            </div>
+            
+            <div class="relative w-full h-[320px] sm:h-[360px] bg-slate-900">
+              <iframe 
+                title="Localização da IMEA Radiodifusão no Google Maps"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-51.3956%2C-22.1325%2C-51.3756%2C-22.1125&layer=mapnik&marker=-22.1225%2C-51.3856"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-full filter contrast-[1.05] opacity-95"
+              ></iframe>
+            </div>
+
+            <div class="p-3.5 bg-[#0a0f1a] border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Coordenadas verificadas</span>
+              </span>
+              <a 
+                href={mapsSearchUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-blue-400 hover:text-blue-300 transition-colors font-medium underline underline-offset-2 whitespace-nowrap"
+              >
+                Ver em tela cheia ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  // Script para Capturar Envio e Direcionar ao WhatsApp Oficial
+  function initContactForm() {
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const feedback = document.getElementById('form-feedback');
+
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const name = formData.get('name') as string;
+      const phone = formData.get('phone') as string;
+      const email = formData.get('email') as string;
+      const station = formData.get('station') as string;
+      const subject = formData.get('subject') as string;
+      const message = formData.get('message') as string;
+      const website = formData.get('website') as string;
+
+      const fullMessage = `*Nova Mensagem pelo Site IMEA Radiodifusão*\n\n` +
+        `*Nome:* ${name}\n` +
+        `*Telefone:* ${phone}\n` +
+        `*E-mail:* ${email}\n` +
+        `*Emissora/UF:* ${station || 'Não informado'}\n` +
+        `*Assunto:* ${subject}\n\n` +
+        `*Mensagem:*\n${message}`;
+
+      const openWhatsapp = () => {
+        const whatsappTarget = `https://wa.me/5518991234567?text=${encodeURIComponent(fullMessage)}`;
+        window.open(whatsappTarget, '_blank');
+      };
+
+      const notify = (window as unknown as { sanbToast?: (msg: string) => void }).sanbToast;
+
+      // 1) Tenta envio por e-mail via Resend (Pages Function /api/contact)
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, station, subject, message, website }),
+      })
+        .then(async (res) => {
+          const data = await res.json().catch(() => ({}));
+          if (res.ok && (data as { success?: boolean }).success) {
+            if (feedback) {
+              feedback.classList.remove('hidden');
+              feedback.textContent = '✓ Mensagem enviada com sucesso! Retornaremos em até 2h úteis.';
+            }
+            notify?.(`Obrigado, ${name.split(' ')[0]}! Mensagem enviada por e-mail.`);
+            form.reset();
+          } else {
+            throw new Error((data as { error?: string }).error || 'Falha no envio');
+          }
+        })
+        .catch(() => {
+          // 2) Fallback: mantém o fluxo antigo via WhatsApp (ex.: dev local sem Functions)
+          if (feedback) {
+            feedback.classList.remove('hidden');
+          }
+          notify?.(`Obrigado, ${name.split(' ')[0]}! Abrindo o WhatsApp para envio prioritário…`);
+          setTimeout(openWhatsapp, 750);
+        });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initContactForm);
+  initContactForm();
+</script>

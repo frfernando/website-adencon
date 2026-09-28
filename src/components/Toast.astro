@@ -1,0 +1,55 @@
+---
+// Toast host — caixas de feedback empilhadas (camada 30 DS-100).
+// A lógica de exibição vive em `src/scripts/motion.ts` (`window.sanbToast`).
+---
+
+<div
+  id="sanb-toasts"
+  class="fixed bottom-28 md:bottom-8 left-1/2 -translate-x-1/2 z-[90] flex flex-col items-center gap-2.5 w-[min(92vw,26rem)] pointer-events-none print:hidden"
+  aria-live="polite"
+  aria-atomic="false"
+></div>
+
+<style>
+  #sanb-toasts .sanb-toast {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    border-radius: 1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #f1f5f9;
+    background: linear-gradient(135deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 100%), rgba(10, 15, 26, 0.92);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 16px 44px -10px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255,255,255,0.12);
+    animation: sanb-toast-in 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  #sanb-toasts .sanb-toast.sanb-toast-ok {
+    border-color: rgba(52, 211, 153, 0.4);
+  }
+  #sanb-toasts .sanb-toast.sanb-toast-out {
+    animation: sanb-toast-out 0.3s ease forwards;
+  }
+  #sanb-toasts .sanb-toast-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 9999px;
+    background: #34d399;
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.8);
+    flex-shrink: 0;
+  }
+  @keyframes sanb-toast-in {
+    from { opacity: 0; transform: translateY(14px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes sanb-toast-out {
+    to { opacity: 0; transform: translateY(8px) scale(0.98); }
+  }
+</style>

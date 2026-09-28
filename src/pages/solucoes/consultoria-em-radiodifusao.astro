@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CONTACT_INFO } from '../../config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20gostaria%20de%20consultoria%20de%20engenharia%20para%20minha%20emissora.`;
+---
+
+<Layout 
+  title="Consultoria técnica e engenharia em radiodifusão | IMEA"
+  description="Engenharia de radiofrequência para rádio e TV: migração AM-FM, aumento de potência, alteração de classe, diagramas de irradiação e ART."
+  videoUrl="/videos/7087636-hd_1366_720_25fps.mp4"
+>
+
+  <!-- Hero Section com Camada 5 Editorial Typography -->
+  <section class="relative bg-gradient-to-b from-[#06090e]/75 via-[#06090e]/50 to-[#06090e] text-white -mt-24 pt-32 pb-20 sm:pt-36 sm:pb-28 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+      <div class="max-w-3xl space-y-6">
+        <a href="/" class="text-sm font-mono font-bold uppercase tracking-wider text-indigo-400 hover:text-indigo-300 inline-flex items-center gap-2 transition-colors whitespace-nowrap">
+          <span>←</span>
+          <span>Voltar para Início</span>
+        </a>
+        
+        <div class="editorial-eyebrow editorial-eyebrow-dark text-indigo-300 border-indigo-500/25 bg-indigo-950/40">
+          <span class="telemetry-dot bg-indigo-400"></span>
+          <span>Engenharia de Radiofrequência & Regulação</span>
+        </div>
+        
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-balance">
+          <span class="title-liquid-platinum block">Consultoria Técnica &</span>
+          <span class="bg-gradient-to-r from-indigo-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent block mt-1.5">Engenharia em Radiodifusão</span>
+        </h1>
+        
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed text-pretty">
+          Projetos técnicos especializados para migração AM-FM, aumento de potência, alteração de classe, diagramas de irradiação e laudos técnicos com emissão de ART.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+          <a 
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            data-magnetic
+            class="btn-shimmer-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl shadow-glow-blue transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group shrink-0 border-t border-white/25"
+          >
+            <svg class="w-5 h-5 text-indigo-200 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>Falar com Engenheiro Regulatório</span>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a 
+            href="/diagnostico-inicial" 
+            data-magnetic
+            class="btn-shimmer inline-flex items-center justify-center gap-2.5 bg-white/[0.08] hover:bg-white/[0.15] text-white text-center font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl border border-white/[0.18] backdrop-blur-md transition-all duration-200 whitespace-nowrap group shrink-0 border-t border-white/30"
+          >
+            <svg class="w-5 h-5 text-indigo-300 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Estudo de Viabilidade Grátis</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-24 sm:py-32 bg-white text-slate-900 relative">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 space-y-12">
+      <div class="max-w-3xl space-y-4">
+        <div class="editorial-eyebrow editorial-eyebrow-light text-indigo-700 bg-indigo-50 border border-indigo-200/80">
+          <span class="telemetry-dot bg-indigo-600"></span>
+          <span>Projetos de RF Certificados</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 text-balance">
+          Projetos Técnicos com Conformidade Regulatória
+        </h2>
+        <p class="text-slate-600 text-base leading-relaxed font-normal text-pretty">
+          Elaboramos laudos radiométricos, estudos de viabilidade técnica de canalização e requerimentos de alteração de características técnicas exigidos pela Anatel e MCom.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div 
+          class="modern-card p-8 rounded-3xl border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+          data-spotlight="indigo"
+          data-tilt
+          data-tilt-max="3.5"
+        >
+          <span class="telemetry-badge telemetry-badge-light text-indigo-900 bg-indigo-50 border border-indigo-200/90 relative z-10">
+            <span class="telemetry-dot bg-indigo-600"></span>
+            <span>Canalização MCom</span>
+          </span>
+          <h3 class="font-bold text-slate-900 text-lg relative z-10">Migração AM para FM</h3>
+          <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Estudo de viabilidade de canal e protocolo de projeto completo de instalação para a migração definitiva.</p>
+        </div>
+
+        <div 
+          class="modern-card p-8 rounded-3xl border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+          data-spotlight="indigo"
+          data-tilt
+          data-tilt-max="3.5"
+        >
+          <span class="telemetry-badge telemetry-badge-light text-indigo-900 bg-indigo-50 border border-indigo-200/90 relative z-10">
+            <span class="telemetry-dot bg-indigo-600"></span>
+            <span>Contorno Protegido</span>
+          </span>
+          <h3 class="font-bold text-slate-900 text-lg relative z-10">Aumento de Potência e Classe</h3>
+          <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Cálculo de cobertura e contorno protegido para elevação de classe e ampliação de alcance comercial.</p>
+        </div>
+
+        <div 
+          class="modern-card p-8 rounded-3xl border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+          data-spotlight="indigo"
+          data-tilt
+          data-tilt-max="3.5"
+        >
+          <span class="telemetry-badge telemetry-badge-light text-indigo-900 bg-indigo-50 border border-indigo-200/90 relative z-10">
+            <span class="telemetry-dot bg-indigo-600"></span>
+            <span>Coordenadas Geográficas</span>
+          </span>
+          <h3 class="font-bold text-slate-900 text-lg relative z-10">Mudança de Parque Transmissor</h3>
+          <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Adequação técnica de novas coordenadas geográficas sem causar interferência em emissoras adjacentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Box no Rodapé Sem Quebra de Linha -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      <h2 class="text-3xl font-black text-slate-900 text-balance">Planejando alterar a potência ou mudar de canal?</h2>
+      <p class="text-slate-600 text-base max-w-xl mx-auto font-normal leading-relaxed text-pretty">
+        Evite indeferimentos no Plano Básico da Anatel. Consulte nossos engenheiros para viabilizar seu projeto técnico.
+      </p>
+      <div>
+        <a 
+          href={whatsappUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          data-magnetic
+          class="btn-shimmer-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl shadow-glow-blue transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group shrink-0 border-t border-white/25"
+        >
+          <svg class="w-5 h-5 text-indigo-200 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>Consultar Viabilidade Técnica</span>
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

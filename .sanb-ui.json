@@ -1,0 +1,24 @@
+{
+  "client": "adencon",
+  "injectedAt": "2026-09-06T17:28:47.362Z",
+  "components": {
+    "ui-badge": {
+      "name": "Badge de Status & Destaque",
+      "group": "ui",
+      "subgroup": "badges",
+      "file": "src/components/ui/badges/Badge.astro",
+      "sourceRel": "ui/badges/Badge.astro",
+      "hash": "562c2351cd15fb2435b4ffc764f35d23",
+      "injectedAt": "2026-09-06T17:28:53.250Z"
+    },
+    "ui-button": {
+      "name": "Button Canônico com Variantes",
+      "group": "ui",
+      "subgroup": "buttons",
+      "file": "src/components/ui/buttons/Button.astro",
+      "sourceRel": "ui/buttons/Button.astro",
+      "hash": "26a7c6b05b311b140ba6b79b949a9b62",
+      "injectedAt": "2026-09-06T17:28:47.363Z"
+    }
+  }
+}

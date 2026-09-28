@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_INFO } from '../config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20gostaria%20de%20um%20diagn%C3%B3stico%20inicial%20gratuito%20da%20minha%20emissora.`;
+---
+
+<Layout 
+  title="Diagnóstico inicial gratuito | Auditoria regulatória IMEA"
+  description="Solicite uma análise preliminar sem custo da situação da sua emissora de rádio ou TV nos sistemas do Ministério das Comunicações e Anatel."
+  videoUrl="/videos/7087636-hd_1366_720_25fps.mp4"
+>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-[#06090e]/75 via-[#06090e]/50 to-[#06090e] text-white -mt-24 pt-32 pb-20 sm:pt-36 sm:pb-28 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+      <a href="/" class="text-sm font-mono font-bold uppercase tracking-wider text-blue-400 hover:text-blue-300 inline-flex items-center gap-2 transition-colors whitespace-nowrap">
+        <span>←</span>
+        <span>Voltar para Início</span>
+      </a>
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-300 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+        Auditoria Cadastral e Jurídica Sem Custo
+      </div>
+      
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
+        Diagnóstico Regulatório da sua <span class="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">Emissora de Rádio ou TV</span>
+      </h1>
+      
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+        Preencha os dados básicos da sua emissora. Nossa equipe fará uma consulta prévia aos sistemas federais para identificar prazos, exigências pendentes e riscos operacionais.
+      </p>
+    </div>
+  </section>
+
+  <!-- Formulário de Diagnóstico com Spotlight -->
+  <section class="py-20 sm:py-28 bg-white text-slate-900">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div 
+        class="modern-card rounded-3xl p-8 sm:p-12 border-t-2 border-t-blue-500 border-x border-slate-200/80 border-b border-slate-200/60 shadow-[0_1px_3px_rgba(15,23,42,0.03),0_12px_28px_-4px_rgba(15,23,42,0.05),inset_0_1px_0_rgba(255,255,255,1)] bg-white space-y-8 relative overflow-hidden"
+        data-spotlight="blue"
+      >
+        
+        <div class="border-b border-slate-100 pb-6 space-y-2 relative z-10">
+          <h2 class="text-2xl font-black text-slate-900">Dados da Concessão</h2>
+          <p class="text-slate-500 text-sm">Informações estritamente confidenciais e protegidas pela LGPD.</p>
+        </div>
+
+        <form class="space-y-6 relative z-10" onsubmit="if(window.sanbToast){window.sanbToast('Diagnóstico recebido! Abrindo o WhatsApp…');} window.location.href='https://wa.me/5518997232230?text=Ol%C3%A1%2C%20solicito%20diagn%C3%B3stico%20regulat%C3%B3rio%20para%20minha%20emissora.'; return false;">
+          
+          <div class="space-y-2">
+            <label class="block text-xs font-mono font-bold uppercase text-slate-700">Nome da Emissora / Razão Social *</label>
+            <input type="text" required autocomplete="organization" placeholder="Ex: Rádio Nova Esperança FM" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-blue-500 transition-colors" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="block text-xs font-mono font-bold uppercase text-slate-700">Cidade / UF *</label>
+              <input type="text" required autocomplete="address-level2" placeholder="Ex: Presidente Prudente / SP" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-blue-500 transition-colors" />
+            </div>
+
+            <div class="space-y-2">
+              <label class="block text-xs font-mono font-bold uppercase text-slate-700">Tipo de Outorga *</label>
+              <select class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-blue-500 transition-colors">
+                <option>FM Comercial</option>
+                <option>Rádio Comunitária (Radcom)</option>
+                <option>FM Educativa</option>
+                <option>AM (Migração para FM)</option>
+                <option>Geradora de TV / RTV Digital</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="block text-xs font-mono font-bold uppercase text-slate-700">Seu Nome / Cargo *</label>
+              <input type="text" required autocomplete="name" placeholder="Ex: Diretor(a) / Presidente" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-blue-500 transition-colors" />
+            </div>
+
+            <div class="space-y-2">
+              <label class="block text-xs font-mono font-bold uppercase text-slate-700">WhatsApp para Resposta *</label>
+              <input type="tel" required autocomplete="tel" inputmode="tel" placeholder="(18) 99999-9999" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-blue-500 transition-colors" />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block text-xs font-mono font-bold uppercase text-slate-700">Qual a principal necessidade hoje?</label>
+            <textarea rows="4" placeholder="Ex: Prazo de renovação vencendo, notificação recebida da Anatel, alteração de diretoria..." class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:border-blue-500 transition-colors"></textarea>
+          </div>
+
+          <button type="submit" data-umami-event="Diagnóstico — Envio" class="btn-shimmer-auto w-full inline-flex items-center justify-center gap-2.5 sm:gap-3 px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-glow-blue transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group cursor-pointer border-t border-white/25">
+            <svg class="w-5 h-5 text-cyan-300 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Solicitar Análise de Outorga Sem Custo</span>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <div class="pt-4 border-t border-slate-200/80 text-center relative z-10">
+          <p class="text-xs text-slate-500 mb-3">Prefere atendimento instantâneo pelo WhatsApp?</p>
+          <a 
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm font-bold text-emerald-600 hover:text-emerald-700 whitespace-nowrap"
+          >
+            <svg class="w-4 h-4 fill-emerald-600 shrink-0" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.3z"/></svg>
+            <span>Falar agora com o plantão regulatório</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

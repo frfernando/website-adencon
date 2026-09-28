@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_INFO } from '../config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20regulariza%C3%A7%C3%A3o%20de%20R%C3%A1dio%20Comunit%C3%A1ria.`;
+---
+
+<Layout 
+  title="Assessoria para rádio comunitária (Radcom) | IMEA"
+  description="Assessoria técnica e jurídica para rádios comunitárias: editais PNO, regularização de atas e diretoria e defesas perante a Anatel."
+  videoUrl="/videos/7087636-hd_1366_720_25fps.mp4"
+>
+
+  <!-- Hero Section com Camada 5 Editorial Typography -->
+  <section class="relative bg-gradient-to-b from-[#06090e]/75 via-[#06090e]/50 to-[#06090e] text-white -mt-24 pt-32 pb-20 sm:pt-36 sm:pb-28 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+      <div class="max-w-3xl space-y-6">
+        <a href="/" class="text-sm font-mono font-bold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-2 transition-colors whitespace-nowrap">
+          <span>←</span>
+          <span>Voltar para Início</span>
+        </a>
+        
+        <div class="editorial-eyebrow editorial-eyebrow-dark text-cyan-300 border-cyan-500/25 bg-cyan-950/40">
+          <span class="telemetry-dot bg-cyan-400"></span>
+          <span>Legislação Específica • Lei nº 9.612/1998</span>
+        </div>
+        
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-balance">
+          <span class="title-liquid-platinum block">Assessoria Completa para</span>
+          <span class="title-liquid-cyan block mt-1.5">Rádios Comunitárias</span>
+        </h1>
+        
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed text-pretty">
+          Orientamos associações mantenedoras em editais MCom, averbação de atas de diretoria nos cadastros federais e defesas técnicas com segurança regulatória.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+          <a 
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            data-magnetic
+            class="btn-shimmer-auto inline-flex items-center justify-center gap-2.5 sm:gap-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:brightness-110 text-white font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl shadow-glow-cyan border border-cyan-400/30 transition-all duration-300 transform hover:-translate-y-1 text-center whitespace-nowrap group shrink-0"
+          >
+            <svg class="w-5 h-5 text-cyan-200 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19.1"/></svg>
+            <span>Regularizar Minha Rádio</span>
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a 
+            href="/diagnostico-inicial" 
+            data-magnetic
+            class="btn-shimmer inline-flex items-center justify-center gap-2.5 bg-white/[0.08] hover:bg-white/[0.15] text-white text-center font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider px-6 sm:px-8 py-3.5 sm:py-4.5 rounded-2xl border border-white/[0.18] backdrop-blur-md transition-all duration-200 whitespace-nowrap group shrink-0"
+          >
+            <svg class="w-5 h-5 text-cyan-300 shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Solicitar Diagnóstico Gratuito</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-24 sm:py-32 bg-white text-slate-900 relative">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+        
+        <!-- Coluna Principal -->
+        <div class="lg:col-span-2 space-y-12">
+          
+          <div class="space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 text-balance">
+              O Desafio das Rádios Comunitárias perante o MCom
+            </h2>
+            <p class="text-slate-600 text-base leading-relaxed font-normal text-pretty">
+              O serviço de radiodifusão comunitária (Lei 9.612/1998) exige rigor no acompanhamento das obrigações legais. Pequenos erros em atas de eleição ou falta de atualização do cadastro dos dirigentes no CADSE podem levar à inabilitação em editais do Plano Nacional de Outorgas (PNO) ou até a processos de cassação.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div 
+              class="modern-card rounded-2xl p-6 border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+              data-spotlight="cyan"
+              data-tilt
+              data-tilt-max="3.5"
+            >
+              <span class="telemetry-badge telemetry-badge-light text-cyan-900 bg-cyan-50 border border-cyan-200/90 relative z-10">
+                <span class="telemetry-dot bg-cyan-600"></span>
+                <span>Fase 01 • MCom</span>
+              </span>
+              <h3 class="font-bold text-slate-900 text-lg relative z-10">Editais do PNO Radcom</h3>
+              <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Acompanhamos a abertura de editais para novos canais e instruímos toda a documentação da sua associação.</p>
+            </div>
+
+            <div 
+              class="modern-card rounded-2xl p-6 border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+              data-spotlight="cyan"
+              data-tilt
+              data-tilt-max="3.5"
+            >
+              <span class="telemetry-badge telemetry-badge-light text-cyan-900 bg-cyan-50 border border-cyan-200/90 relative z-10">
+                <span class="telemetry-dot bg-cyan-600"></span>
+                <span>Fase 02 • Cartório</span>
+              </span>
+              <h3 class="font-bold text-slate-900 text-lg relative z-10">Atas e Estatutos</h3>
+              <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Adequação jurídica do estatuto social e registro de atas de eleição para manter a entidade 100% adimplente.</p>
+            </div>
+
+            <div 
+              class="modern-card rounded-2xl p-6 border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+              data-spotlight="cyan"
+              data-tilt
+              data-tilt-max="3.5"
+            >
+              <span class="telemetry-badge telemetry-badge-light text-cyan-900 bg-cyan-50 border border-cyan-200/90 relative z-10">
+                <span class="telemetry-dot bg-cyan-600"></span>
+                <span>Fase 03 • CADSE</span>
+              </span>
+              <h3 class="font-bold text-slate-900 text-lg relative z-10">Renovação de Outorga</h3>
+              <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Formatação do processo de renovação nos 12 meses anteriores ao vencimento para garantir a continuidade legal.</p>
+            </div>
+
+            <div 
+              class="modern-card rounded-2xl p-6 border border-slate-200/90 bg-slate-50/50 space-y-3 relative overflow-hidden" 
+              data-spotlight="cyan"
+              data-tilt
+              data-tilt-max="3.5"
+            >
+              <span class="telemetry-badge telemetry-badge-light text-cyan-900 bg-cyan-50 border border-cyan-200/90 relative z-10">
+                <span class="telemetry-dot bg-cyan-600"></span>
+                <span>Fase 04 • Anatel</span>
+              </span>
+              <h3 class="font-bold text-slate-900 text-lg relative z-10">Laudos de 25W ERP</h3>
+              <p class="text-slate-600 text-xs leading-relaxed font-normal relative z-10">Projetos de engenharia e laudos de irradiação com ART de engenheiro para fiscalizações da Anatel.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar CTA Sem Quebra de Linha com Spotlight e Tilt -->
+        <div class="space-y-6 lg:sticky lg:top-28">
+          <div 
+            class="modern-card rounded-3xl p-7 border border-slate-200/90 bg-slate-900 text-white space-y-6 relative overflow-hidden" 
+            data-spotlight="cyan"
+            data-tilt
+            data-tilt-max="3"
+          >
+            <div class="editorial-eyebrow editorial-eyebrow-dark text-cyan-300 border-cyan-500/30 bg-cyan-950/50 relative z-10">
+              <span class="telemetry-dot bg-cyan-400"></span>
+              <span>Ferramenta de Auditoria</span>
+            </div>
+            <h3 class="text-xl font-black relative z-10 text-balance">Checklist para Radcom</h3>
+            <p class="text-slate-300 text-xs leading-relaxed relative z-10 text-pretty">
+              Confira se a sua associação comunitária está em dia com todas as exigências do MCom e Anatel.
+            </p>
+            <div class="relative z-10">
+              <a 
+                href="/checklist-radio-comunitaria" 
+                data-magnetic
+                class="btn-shimmer-auto w-full inline-flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider px-4 py-3.5 sm:py-4 rounded-2xl shadow-glow-cyan transition-all whitespace-nowrap group"
+              >
+                <span>Acessar Checklist Interativo</span>
+                <svg class="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>

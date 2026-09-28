@@ -1,0 +1,36 @@
+---
+export interface Props {
+  variant?: 'emerald' | 'blue' | 'amber' | 'purple' | 'neutral';
+  dot?: boolean;
+  class?: string;
+}
+
+const {
+  variant = 'emerald',
+  dot = false,
+  class: className = '',
+} = Astro.props;
+
+const variantClasses: Record<string, string> = {
+  emerald: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400',
+  blue: 'border-blue-500/30 bg-blue-500/10 text-blue-400',
+  amber: 'border-amber-500/30 bg-amber-500/10 text-amber-400',
+  purple: 'border-purple-500/30 bg-purple-500/10 text-purple-400',
+  neutral: 'border-neutral-700 bg-neutral-800 text-neutral-300',
+};
+const variantClass = variantClasses[variant];
+
+const dotStyles: Record<string, string> = {
+  emerald: 'bg-emerald-400',
+  blue: 'bg-blue-400',
+  amber: 'bg-amber-400',
+  purple: 'bg-purple-400',
+  neutral: 'bg-neutral-400',
+};
+const dotClass = dotStyles[variant];
+---
+
+<span class={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium tracking-wide ${variantClass} ${className}`}>
+  {dot && <span class={`h-1.5 w-1.5 rounded-full animate-pulse ${dotClass}`}></span>}
+  <slot />
+</span>

@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_INFO } from '../config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=Ol%C3%A1%2C%20me%20perdi%20no%20site%20e%20preciso%20de%20ajuda%20com%20minha%20outorga.`;
+---
+
+<Layout
+  title="Página não encontrada (404) | IMEA Radiodifusão"
+  description="A página que você procura não existe ou foi movida. Volte às rotas principais da IMEA Radiodifusão ou fale direto com um especialista regulatório."
+>
+  <section class="relative py-20 sm:py-28 px-4 sm:px-6 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0f1a] via-[#06090e] to-[#06090e]" aria-hidden="true"></div>
+
+    <div class="relative max-w-2xl mx-auto text-center space-y-8">
+      <div>
+        <p class="editorial-eyebrow editorial-eyebrow-dark text-cyan-300 mx-auto">
+          <span class="telemetry-dot bg-amber-400"></span>
+          Erro 404 — Rota fora do ar
+        </p>
+        <h1 class="font-display font-extrabold tracking-tight text-white leading-[1.05] mt-6 text-5xl sm:text-7xl">
+          <span class="title-liquid-platinum">Sinal</span>
+          <span class="title-liquid-cyan">perdido.</span>
+        </h1>
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed mt-5 max-w-xl mx-auto text-pretty">
+          A frequência que você sintonizou não existe mais. Mas sua outorga não precisa ficar fora do ar — escolha abaixo o caminho certo.
+        </p>
+      </div>
+
+      <nav aria-label="Rotas principais" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
+        <a href="/" class="dark-glass-card rounded-2xl p-5 group" data-spotlight="blue">
+          <p class="text-white font-bold text-sm">Página inicial</p>
+          <p class="text-slate-400 text-xs mt-1">Visão geral da consultoria</p>
+        </a>
+        <a href="/solucoes" class="dark-glass-card rounded-2xl p-5 group" data-spotlight="blue">
+          <p class="text-white font-bold text-sm">Soluções regulatórias</p>
+          <p class="text-slate-400 text-xs mt-1">Renovação, defesa, Radcom</p>
+        </a>
+        <a href="/diagnostico-inicial" class="dark-glass-card rounded-2xl p-5 group" data-spotlight="cyan">
+          <p class="text-white font-bold text-sm">Diagnóstico inicial</p>
+          <p class="text-slate-400 text-xs mt-1">Avaliação gratuita da sua emissora</p>
+        </a>
+        <a href="/contato" class="dark-glass-card rounded-2xl p-5 group" data-spotlight="cyan">
+          <p class="text-white font-bold text-sm">Falar com especialista</p>
+          <p class="text-slate-400 text-xs mt-1">Retorno em até 2h úteis</p>
+        </a>
+      </nav>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-umami-event="WhatsApp — 404"
+          class="btn-shimmer-auto inline-flex items-center gap-2.5 px-7 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-extrabold text-sm uppercase tracking-wider shadow-glow-emerald transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap"
+        >
+          Pedir ajuda no WhatsApp
+        </a>
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 px-7 py-4 rounded-2xl border border-white/15 text-slate-200 font-bold text-sm uppercase tracking-wider hover:border-white/30 hover:bg-white/5 transition-all whitespace-nowrap"
+        >
+          Central de inteligência
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

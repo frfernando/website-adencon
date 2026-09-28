@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_INFO } from '../config';
+---
+
+<Layout 
+  title="Política de privacidade e proteção de dados | IMEA"
+  description="Saiba como a IMEA Radiodifusão trata e protege os dados da sua emissora em conformidade com a LGPD (Lei nº 13.709/2018)."
+  videoUrl="/videos/7087636-hd_1366_720_25fps.mp4"
+>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-[#06090e]/75 via-[#06090e]/50 to-[#06090e] text-white -mt-24 pt-32 pb-16 sm:pt-36 sm:pb-20 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-300 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+        Conformidade LGPD (Lei 13.709/2018)
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
+        Política de Privacidade
+      </h1>
+      <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto font-normal">
+        Saiba como a IMEA Radiodifusão coleta, trata e protege os dados da sua emissora e de seus representantes legais.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 sm:py-24 bg-white text-slate-900 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose max-w-none text-base text-slate-700 leading-relaxed space-y-6">
+      
+      <p class="text-slate-500 font-mono text-xs uppercase tracking-wider">
+        Última atualização: Setembro de 2026 • Versão 2.1
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 pt-4">1. Identificação do Controlador de Dados</h2>
+      <p>
+        Esta Política de Privacidade aplica-se aos dados coletados pela <strong>{CONTACT_INFO.companyName}</strong>, inscrita no CNPJ sob o nº <strong>{CONTACT_INFO.cnpj}</strong>, com sede em {CONTACT_INFO.address}. Na qualidade de controladora de dados pessoais no âmbito da Lei Geral de Proteção de Dados (LGPD), nos comprometemos com a segurança, sigilo e transparência no tratamento de dados fornecidos por nossos clientes, parceiros e visitantes.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 pt-4">2. Dados Coletados e Finalidade</h2>
+      <p>
+        A IMEA Radiodifusão coleta exclusivamente as informações estritamente necessárias para a prestação de serviços de consultoria regulatória, técnica e administrativa perante o Ministério das Comunicações (MCom) e a Agência Nacional de Telecomunicações (Anatel):
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Dados de Identificação da Entidade:</strong> Razão Social, CNPJ, nome fantasia, endereço da sede e coordenadas geográficas do parque transmissor.</li>
+        <li><strong>Dados dos Representantes Legais e Sócios:</strong> Nome completo, CPF, RG, estado civil, nacionalidade e dados de contato para elaboração de contratos, procurações e peças administrativas.</li>
+        <li><strong>Dados de Contato:</strong> Endereço de e-mail e número de WhatsApp fornecidos espontaneamente através dos formulários de diagnóstico do site.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-slate-900 pt-4">3. Sigilo Profissional e Segurança das Informações</h2>
+      <p>
+        Todos os documentos, processos administrativos, dados cadastrais e projetos de engenharia transmitidos à IMEA Radiodifusão são tratados sob rigoroso sigilo profissional. Adotamos medidas de segurança técnicas e administrativas aptas a proteger os dados pessoais contra acessos não autorizados e contra situações acidentais ou ilícitas de destruição, perda, alteração ou comunicação.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 pt-4">4. Direitos do Titular dos Dados</h2>
+      <p>
+        Em conformidade com o Artigo 18 da LGPD, você tem o direito de solicitar a qualquer momento a confirmação da existência de tratamento, o acesso aos dados, a correção de dados incompletos ou desatualizados, bem como a revogação de consentimentos concedidos através de nossos canais de contato.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 pt-4">5. Canal de Atendimento e Encarregado (DPO)</h2>
+      <p>
+        Para esclarecer dúvidas sobre esta Política de Privacidade ou solicitar a atualização de seus dados, entre em contato através do nosso e-mail oficial:
+        <a href={`mailto:${CONTACT_INFO.email}`} class="font-mono text-blue-600 font-bold hover:underline ml-1">{CONTACT_INFO.email}</a> ou pelo telefone <strong>{CONTACT_INFO.phone}</strong>.
+      </p>
+
+      <div class="pt-8 border-t border-slate-200">
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-blue-600 text-slate-700 hover:text-white font-bold text-sm uppercase tracking-wider transition-all duration-200 whitespace-nowrap group shrink-0"
+        >
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Voltar para a Página Inicial</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</Layout>

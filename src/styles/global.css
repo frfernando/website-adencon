@@ -1,0 +1,1262 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/plus-jakarta-sans";
+@import "@fontsource/jetbrains-mono";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+
+  --color-brand-dark: #06090e;
+  --color-brand-obsidian: #090d16;
+  --color-brand-surface: #0d131f;
+  --color-brand-surfacelight: #161f30;
+  --color-brand-blue: #2563eb;
+  --color-brand-indigo: #4f46e5;
+  --color-brand-accent: #3b82f6;
+  --color-brand-cyan: #06b6d4;
+  --color-brand-emerald: #10b981;
+  --color-brand-medium: #3b82f6;
+  --color-brand-light: #eff6ff;
+
+  --shadow-glow-blue: 0 0 50px -10px rgba(59, 130, 246, 0.3);
+  --shadow-glow-cyan: 0 0 50px -10px rgba(6, 182, 212, 0.3);
+  --shadow-glow-emerald: 0 0 50px -10px rgba(16, 185, 129, 0.25);
+  --shadow-glow-red: 0 0 50px -10px rgba(239, 68, 68, 0.3);
+  --shadow-soft-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-soft-sm: 0 4px 16px -2px rgba(0, 0, 0, 0.05);
+  --shadow-soft-md: 0 12px 32px -4px rgba(0, 0, 0, 0.07);
+  --shadow-soft-lg: 0 24px 64px -12px rgba(0, 0, 0, 0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
+  --shadow-glass-dark: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --shadow-inner-glow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+
+  --background-image-radial-glow: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%);
+  --background-image-grid-pattern: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  --background-image-grid-pattern-dark: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+
+  --animate-pulse-glow: pulseGlow 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s linear infinite;
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-radar: radarSweep 8s linear infinite;
+  --animate-aurora: aurora 14s ease-in-out infinite;
+  --animate-aurora-reverse: aurora 18s ease-in-out infinite reverse;
+
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes radarSweep {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes aurora {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(25px, -20px) scale(1.06); }
+    66% { transform: translate(-20px, 15px) scale(0.96); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01", "ss02";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+
+  @layer components {
+    .site-header-light {
+      color: #0f172a;
+    }
+
+    .site-header-light nav {
+      color: #334155;
+    }
+
+    .site-header-light nav a,
+    .site-header-light nav button {
+      color: #334155 !important;
+    }
+
+    .site-header-light nav a:hover,
+    .site-header-light nav button:hover,
+    .site-header-light nav a[class*="font-bold"],
+    .site-header-light nav button[class*="font-bold"] {
+      color: #0f172a !important;
+      background-color: #eff6ff !important;
+    }
+
+    .site-header-light nav button svg.text-slate-400 {
+      color: #64748b !important;
+    }
+
+    .site-header-light .group\/dropdown > div > div {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16) !important;
+    }
+
+    .site-header-light .group\/dropdown > div > div a:hover {
+      background-color: #eff6ff !important;
+    }
+
+    .site-header-light .group\/dropdown strong {
+      color: #0f172a !important;
+    }
+
+    .site-header-light .group\/dropdown span.text-slate-400,
+    .site-header-light .group\/dropdown svg.text-slate-500 {
+      color: #64748b !important;
+    }
+
+    .site-header-light .group\/dropdown > div > div .border-white\/10 {
+      border-color: #e2e8f0 !important;
+    }
+
+    .site-header-light #mobile-menu-drawer {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-color: #e2e8f0 !important;
+    }
+
+    .site-header-light #mobile-menu-drawer a {
+      color: #334155 !important;
+    }
+
+    .site-header-light #mobile-menu-drawer a:hover,
+    .site-header-light #mobile-menu-drawer a[class*="font-bold"] {
+      background-color: #eff6ff !important;
+      color: #0f172a !important;
+    }
+
+    .site-header-light #mobile-menu-drawer .border-white\/10 {
+      border-color: #e2e8f0 !important;
+    }
+
+    .site-header-light #mobile-menu-trigger {
+      color: #334155 !important;
+    }
+
+    .site-header-light #mobile-menu-trigger:hover {
+      color: #0f172a !important;
+      background-color: #eff6ff !important;
+    }
+
+    .site-footer-light h3,
+    .site-footer-light .text-white {
+      color: #0f172a !important;
+    }
+
+    .site-footer-light p,
+    .site-footer-light li,
+    .site-footer-light span.text-slate-300,
+    .site-footer-light span.text-slate-400,
+    .site-footer-light a.text-slate-300,
+    .site-footer-light .text-slate-300,
+    .site-footer-light .text-slate-400 {
+      color: #475569 !important;
+    }
+
+    .site-footer-light a:hover {
+      color: #1d4ed8 !important;
+    }
+
+    .site-footer-light .border-white\/\[0\.08\],
+    .site-footer-light .border-white\/\[0\.06\] {
+      border-color: #e2e8f0 !important;
+    }
+
+    .site-footer-light .bg-white\/\[0\.03\] {
+      background-color: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+    }
+
+    .theme-toggle {
+      min-width: 2.5rem;
+      min-height: 2.5rem;
+    }
+
+    .theme-toggle svg {
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+
+    @media (min-width: 640px) {
+      .theme-toggle {
+        min-width: 2.75rem;
+        min-height: 2.75rem;
+      }
+
+      .theme-toggle svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    [data-theme="dark"] .site-header-light {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      color: #0f172a;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 4px 24px -2px rgba(15, 23, 42, 0.12);
+    }
+
+    [data-theme="dark"] .site-header-light nav a,
+    [data-theme="dark"] .site-header-light nav button,
+    [data-theme="dark"] .site-header-light #mobile-menu-trigger {
+      color: #334155 !important;
+    }
+
+    [data-theme="dark"] .site-header-light nav a:hover,
+    [data-theme="dark"] .site-header-light nav button:hover,
+    [data-theme="dark"] .site-header-light nav a[class*="font-bold"],
+    [data-theme="dark"] .site-header-light nav button[class*="font-bold"],
+    [data-theme="dark"] .site-header-light #mobile-menu-trigger:hover {
+      color: #0f172a !important;
+      background-color: #eff6ff !important;
+    }
+
+    [data-theme="dark"] .site-header-light .group\/dropdown > div > div,
+    [data-theme="dark"] .site-header-light #mobile-menu-drawer {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-color: #e2e8f0 !important;
+    }
+
+    [data-theme="dark"] .site-header-light .group\/dropdown strong {
+      color: #0f172a !important;
+    }
+
+    [data-theme="dark"] .site-header-light #mobile-menu-drawer a {
+      color: #334155 !important;
+    }
+
+    [data-theme="dark"] .site-footer-light {
+      background-color: #ffffff !important;
+      color: #475569;
+      border-color: #e2e8f0 !important;
+    }
+
+    [data-theme="dark"] .site-footer-light h3,
+    [data-theme="dark"] .site-footer-light .text-white {
+      color: #0f172a !important;
+    }
+
+    [data-theme="dark"] .site-footer-light p,
+    [data-theme="dark"] .site-footer-light li,
+    [data-theme="dark"] .site-footer-light span.text-slate-300,
+    [data-theme="dark"] .site-footer-light span.text-slate-400,
+    [data-theme="dark"] .site-footer-light a.text-slate-300,
+    [data-theme="dark"] .site-footer-light .text-slate-300,
+    [data-theme="dark"] .site-footer-light .text-slate-400 {
+      color: #475569 !important;
+    }
+
+    [data-theme="dark"] .site-footer-light .border-white\/\[0\.08\],
+    [data-theme="dark"] .site-footer-light .border-white\/\[0\.06\] {
+      border-color: #e2e8f0 !important;
+    }
+
+    [data-theme="dark"] .site-footer-light .bg-white\/\[0\.03\] {
+      background-color: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+    }
+
+    html[data-theme="light"],
+    html[data-theme="light"] body {
+      background-color: #f8fafc !important;
+    }
+
+  }
+  
+  [data-theme="light"] main {
+    color: #0f172a;
+  }
+
+  [data-theme="light"] .announcement-bar {
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    color: #334155 !important;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+  }
+
+  [data-theme="light"] .announcement-bar span.text-slate-400 {
+    color: #475569 !important;
+  }
+
+  [data-theme="light"] .announcement-bar strong.text-slate-200 {
+    color: #0f172a !important;
+  }
+
+  [data-theme="light"] .announcement-bar a.text-blue-400 {
+    color: #1d4ed8 !important;
+  }
+
+  [data-theme="light"] .announcement-bar a.text-blue-400:hover {
+    color: #1e40af !important;
+  }
+
+  [data-theme="light"] main section[class*="bg-gradient-to-b"][class*="from-\\[\\#06090e\\]"],
+  [data-theme="light"] main section[class*="bg-gradient-to-b"][class*="from-\\[\\#0a0f1a\\]"] {
+    background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.72), rgba(255, 255, 255, 0.84)) !important;
+    background-color: rgba(248, 250, 252, 0.72) !important;
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  [data-theme="light"] main section[class*="bg-gradient-to-b"][class*="from-\\[\\#06090e\\]"] > div,
+  [data-theme="light"] main section[class*="bg-gradient-to-b"][class*="from-\\[\\#0a0f1a\\]"] > div {
+    color: #0f172a;
+  }
+
+  [data-theme="light"] main [class*="bg-gradient-to-b"][class*="from-\\[\\#0e1422\\]"],
+  [data-theme="light"] main [class*="bg-gradient-to-b"][class*="from-\\[\\#12141d\\]"],
+  [data-theme="light"] main [class*="bg-gradient-to-b"][class*="from-\\[\\#0a0c12\\]"],
+  [data-theme="light"] main [class*="bg-slate-900"],
+  [data-theme="light"] main [class*="bg-\\[\\#0a0f1a\\]"],
+  [data-theme="light"] main [class*="bg-\\[\\#0a0d16\\]"] {
+    background-image: none !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  [data-theme="light"] main [class*="bg-white/\\[0.04\\]"],
+  [data-theme="light"] main [class*="bg-white/10"],
+  [data-theme="light"] main [class*="bg-white/\\[0.08\\]"] {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  [data-theme="light"] main [class*="border-white"] {
+    border-color: #cbd5e1 !important;
+  }
+
+  [data-theme="light"] main [class*="text-white"] {
+    color: #0f172a !important;
+  }
+
+  [data-theme="light"] main [class*="text-slate-200"],
+  [data-theme="light"] main [class*="text-slate-300"] {
+    color: #475569 !important;
+  }
+
+  [data-theme="light"] main [class*="text-slate-400"] {
+    color: #64748b !important;
+  }
+
+  [data-theme="light"] main [class*="text-blue-300"] {
+    color: #1d4ed8 !important;
+  }
+
+  [data-theme="light"] main [class*="text-cyan-300"] {
+    color: #0e7490 !important;
+  }
+
+  [data-theme="light"] main [class*="text-emerald-300"] {
+    color: #047857 !important;
+  }
+
+  [data-theme="light"] main [class*="text-amber-200"] {
+    color: #92400e !important;
+  }
+
+  [data-theme="light"] main [class*="bg-blue-600"][class*="text-white"],
+  [data-theme="light"] main [class*="bg-red-600"][class*="text-white"],
+  [data-theme="light"] main [class*="bg-emerald-600"][class*="text-white"],
+  [data-theme="light"] main [class*="bg-indigo-600"][class*="text-white"],
+  [data-theme="light"] main [class*="bg-gradient-to-tr"][class*="text-white"] {
+    color: #ffffff !important;
+  }
+
+  [data-theme="light"] main [class*="bg-blue-600"][class*="text-white"] svg,
+  [data-theme="light"] main [class*="bg-red-600"][class*="text-white"] svg,
+  [data-theme="light"] main [class*="bg-emerald-600"][class*="text-white"] svg,
+  [data-theme="light"] main [class*="bg-indigo-600"][class*="text-white"] svg,
+  [data-theme="light"] main [class*="bg-gradient-to-tr"][class*="text-white"] svg {
+    color: inherit;
+  }
+
+  [data-theme="light"] main [class*="bg-amber-500/10"] {
+    background-color: #fffbeb !important;
+    border-color: #fcd34d !important;
+  }
+
+  [data-theme="light"] #hero-video-wrapper .hero-bg-video {
+    opacity: 0.25 !important;
+    filter: saturate(0.5) brightness(1.05);
+    display: block !important;
+    visibility: visible !important;
+    z-index: 1 !important;
+  }
+
+  [data-theme="light"] #hero-video-wrapper .hero-video-overlay-horizontal {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.56)) !important;
+  }
+
+  [data-theme="light"] #hero-video-wrapper .hero-video-overlay-vertical {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.46) 58%, rgba(255, 255, 255, 0.84)) !important;
+  }
+
+  [data-theme="light"] #hero-video-wrapper .hero-video-glow {
+    opacity: 0.3;
+  }
+
+  html[data-theme="light"] main > section:first-of-type {
+    background: linear-gradient(to bottom, rgba(248, 250, 252, 0.42), rgba(255, 255, 255, 0.58)) !important;
+    backdrop-filter: none;
+    position: relative;
+    z-index: 0;
+  }
+
+  html[data-theme="light"] main > section:first-of-type .text-slate-200,
+  html[data-theme="light"] main > section:first-of-type .text-slate-300 {
+    color: #334155 !important;
+  }
+
+  html[data-theme="light"] main > section:first-of-type .text-white {
+    color: #0f172a !important;
+  }
+
+  html[data-theme="light"] main > section:first-of-type strong.text-white {
+    color: #0b3b73 !important;
+  }
+
+  html[data-theme="light"] main > section:first-of-type .text-cyan-400 {
+    color: #075985 !important;
+  }
+
+  html[data-theme="light"] main > section:first-of-type .text-blue-400 {
+    color: #1d4ed8 !important;
+  }
+
+  html[data-theme="light"] main > section:first-of-type .btn-shimmer:not(.btn-shimmer-auto) {
+    background-color: rgba(255, 255, 255, 0.84) !important;
+    color: #0f172a !important;
+    border-color: #94a3b8 !important;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  }
+
+  html[data-theme="light"] main > section:first-of-type .btn-shimmer:not(.btn-shimmer-auto):hover {
+    background-color: #ffffff !important;
+    color: #0b3b73 !important;
+  }
+
+  html[data-theme="light"] #hero-video-wrapper {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  @media (max-width: 767px) {
+    #hero-bg-video {
+      display: none;
+    }
+  }
+
+  [data-theme="light"] .editorial-eyebrow-dark,
+  [data-theme="light"] .telemetry-badge-dark {
+    background: #eff6ff !important;
+    color: #1e3a8a !important;
+    border-color: #bfdbfe !important;
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.08);
+  }
+
+  [data-theme="light"] .editorial-eyebrow-dark .telemetry-dot,
+  [data-theme="light"] .telemetry-badge-dark .telemetry-dot {
+    filter: saturate(0.9);
+  }
+
+  [data-theme="light"] .dossie-panel {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12) !important;
+  }
+
+  [data-theme="light"] .dossie-panel .border-white\/10,
+  [data-theme="light"] .dossie-panel .border-white\/5,
+  [data-theme="light"] .dossie-panel .border-white\/20 {
+    border-color: #cbd5e1 !important;
+  }
+
+  [data-theme="light"] .dossie-panel .dossie-tabs,
+  [data-theme="light"] .dossie-panel .dossie-block {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+  }
+
+  [data-theme="light"] .dossie-panel .dossie-tab-btn:not(.bg-blue-600) {
+    color: #475569 !important;
+  }
+
+  [data-theme="light"] .dossie-panel .dossie-tab-btn:not(.bg-blue-600):hover {
+    color: #1d4ed8 !important;
+    background-color: #dbeafe !important;
+  }
+
+  [data-theme="light"] .dossie-panel .text-white {
+    color: #0f172a !important;
+  }
+
+  [data-theme="light"] .dossie-panel .text-slate-300,
+  [data-theme="light"] .dossie-panel .text-slate-400 {
+    color: #475569 !important;
+  }
+
+  [data-theme="light"] .dossie-panel .dossie-alert {
+    background: #fffbeb !important;
+    border-color: #fcd34d !important;
+    color: #92400e !important;
+  }
+
+  [data-theme="light"] .urgency-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fff7f7 100%) !important;
+    border-color: #fecaca !important;
+    color: #0f172a !important;
+    box-shadow: 0 20px 45px rgba(127, 29, 29, 0.12) !important;
+  }
+
+  [data-theme="light"] .urgency-card h2 {
+    color: #0f172a !important;
+  }
+
+  [data-theme="light"] .urgency-card p {
+    color: #475569 !important;
+  }
+
+  [data-theme="light"] .urgency-card .editorial-eyebrow-dark {
+    background: #fff1f2 !important;
+    color: #9f1239 !important;
+    border-color: #fecdd3 !important;
+  }
+
+  [data-theme="light"] .urgency-card .telemetry-badge-dark {
+    background: #fff1f2 !important;
+    color: #9f1239 !important;
+    border-color: #fda4af !important;
+  }
+
+  [data-theme="light"] .institutional-closing {
+    background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%) !important;
+    color: #0f172a !important;
+    border-color: #dbeafe !important;
+  }
+
+  [data-theme="light"] .institutional-closing > .bg-radial-glow {
+    opacity: 0.08 !important;
+  }
+
+  [data-theme="light"] .institutional-closing p {
+    color: #475569 !important;
+  }
+
+  body {
+    @apply bg-[#06090e] text-slate-800 selection:bg-blue-500/20 selection:text-blue-700;
+    overflow-x: clip;
+    max-width: 100vw;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Suporte a Safe Area Insets para dispositivos móveis com notch ou dynamic island */
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: env(safe-area-inset-left, 0px);
+      padding-right: env(safe-area-inset-right, 0px);
+    }
+  }
+
+  /* Proteção responsiva para mídias fluídas */
+  img, video, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Focus ring acessível WCAG 2.2 */
+  :focus-visible {
+    @apply outline-none ring-2 ring-blue-500/80 ring-offset-2 ring-offset-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  /* ==========================================================================
+     CAMADA 1: ATMOSFERA CINEMATOGRÁFICA & PROFUNDIDADE ORGÂNICA (50k Standard)
+     ========================================================================== */
+  
+  /* Microtextura Orgânica de Grão Fílmico (Procedural Noise) */
+  .cinematic-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 190px 190px;
+    transform: translateZ(0);
+    will-change: opacity;
+  }
+
+  /* Orbes de Malha de Luz Aurora Volumétrica */
+  .aurora-mesh-orb {
+    border-radius: 9999px;
+    filter: blur(140px);
+    transform: translateZ(0);
+    will-change: transform;
+    pointer-events: none;
+  }
+
+  /* ==========================================================================
+     CAMADA 2: BORDAS ESPECULARES & VIDRO SILICON 2.0 (50k Standard)
+     ========================================================================== */
+
+  /* Modern Clean Surface Card com chanfro de luz superior e elevação de duplo estágio */
+  .modern-card {
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 
+      0 0 0 1px rgba(15, 23, 42, 0.03),
+      0 2px 4px -1px rgba(15, 23, 42, 0.03),
+      0 12px 24px -4px rgba(15, 23, 42, 0.05),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .modern-card-hover:hover,
+  .modern-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.35);
+    box-shadow: 
+      0 0 0 1px rgba(59, 130, 246, 0.18),
+      0 8px 16px -4px rgba(15, 23, 42, 0.04),
+      0 20px 40px -8px rgba(59, 130, 246, 0.09),
+      inset 0 1px 0 0 rgba(255, 255, 255, 1);
+  }
+
+  /* Dark Glass 2.0: Vidro escuro aeroespacial com chanfro especular superior lapidado a laser */
+  .dark-glass-card,
+  .specular-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.015) 100%), rgba(10, 15, 24, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+    box-shadow: 
+      0 12px 36px 0 rgba(0, 0, 0, 0.4),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.16);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark-glass-card:hover,
+  .specular-card:hover {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-color: rgba(59, 130, 246, 0.35);
+    box-shadow: 
+      0 16px 44px -10px rgba(0, 0, 0, 0.55),
+      0 0 32px -5px rgba(59, 130, 246, 0.22),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.28);
+    transform: translateY(-3px);
+  }
+
+  /* Badge de Telemetria e Pílula com Borda Especular */
+  .specular-badge {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%), rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  /* ==========================================================================
+     CAMADA 3: SHIMMER SWEEP (FEIXE DE LUZ LÍQUIDA NOS BOTÕES DE AÇÃO)
+     ========================================================================== */
+
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 45%;
+    height: 200%;
+    background: linear-gradient(
+      60deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.32) 50%,
+      transparent 100%
+    );
+    transform: rotate(25deg) translateZ(0);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .btn-shimmer:hover::after {
+    opacity: 1;
+    left: 140%;
+    transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  }
+
+  /* Shimmer Periódico Automático Suave nos Botões Primários Hero & Urgência */
+  @keyframes autoLiquidSweep {
+    0% {
+      left: -75%;
+      opacity: 0;
+    }
+    12% {
+      opacity: 0.85;
+    }
+    28% {
+      left: 145%;
+      opacity: 0;
+    }
+    100% {
+      left: 145%;
+      opacity: 0;
+    }
+  }
+
+  .btn-shimmer-auto {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shimmer-auto::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 45%;
+    height: 200%;
+    background: linear-gradient(
+      60deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.36) 50%,
+      transparent 100%
+    );
+    transform: rotate(25deg) translateZ(0);
+    pointer-events: none;
+    animation: autoLiquidSweep 5.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  }
+
+  .btn-shimmer-auto:hover::after {
+    animation: none;
+    opacity: 1;
+    left: 140%;
+    transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* ==========================================================================
+     CAMADA 4: CURSOR SPOTLIGHT TRACKING (ILUMINAÇÃO CINÉTICA RESPONSIVA)
+     ========================================================================== */
+  [data-spotlight] {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  [data-spotlight]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      520px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px),
+      rgba(59, 130, 246, 0.12),
+      rgba(6, 182, 212, 0.04) 40%,
+      transparent 72%
+    );
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [data-spotlight]:hover::before {
+    opacity: 1;
+  }
+
+  /* Variações Cromáticas Específicas de Spotlight por Categoria */
+  [data-spotlight="blue"]::before {
+    background: radial-gradient(
+      520px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px),
+      rgba(59, 130, 246, 0.14),
+      rgba(14, 165, 233, 0.05) 42%,
+      transparent 72%
+    );
+  }
+
+  [data-spotlight="red"]::before {
+    background: radial-gradient(
+      520px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px),
+      rgba(239, 68, 68, 0.15),
+      rgba(249, 115, 22, 0.06) 42%,
+      transparent 72%
+    );
+  }
+
+  [data-spotlight="cyan"]::before {
+    background: radial-gradient(
+      520px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px),
+      rgba(6, 182, 212, 0.14),
+      rgba(45, 212, 191, 0.05) 42%,
+      transparent 72%
+    );
+  }
+
+  [data-spotlight="indigo"]::before {
+    background: radial-gradient(
+      520px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px),
+      rgba(99, 102, 241, 0.15),
+      rgba(139, 92, 246, 0.05) 42%,
+      transparent 72%
+    );
+  }
+
+  [data-spotlight="emerald"]::before {
+    background: radial-gradient(
+      520px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px),
+      rgba(16, 185, 129, 0.14),
+      rgba(20, 184, 166, 0.05) 42%,
+      transparent 72%
+    );
+  }
+
+  [data-spotlight="gold"]::before {
+    background: radial-gradient(
+      520px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px),
+      rgba(245, 158, 11, 0.14),
+      rgba(251, 191, 36, 0.04) 42%,
+      transparent 72%
+    );
+  }
+
+  /* ==========================================================================
+     CAMADA 5: TIPOGRAFIA EDITORIAL, GRADIENTES METÁLICOS & TELEMETRIA REGULATÓRIA
+     ========================================================================== */
+
+  /* Gradiente Metálico Platina Líquida para Títulos de Alto Valor */
+  .title-liquid-platinum {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #cbd5e1 52%, #ffffff 78%, #94a3b8 100%);
+    background-size: 220% 220%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.035em;
+    filter: drop-shadow(0 2px 14px rgba(255, 255, 255, 0.1));
+    animation: liquidDrift 9s ease-in-out infinite;
+  }
+
+  /* Gradiente Ciano & Safira Luminescente */
+  .title-liquid-cyan {
+    background: linear-gradient(135deg, #ffffff 0%, #67e8f9 35%, #38bdf8 68%, #818cf8 100%);
+    background-size: 220% 220%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.03em;
+    filter: drop-shadow(0 2px 20px rgba(56, 189, 248, 0.22));
+    animation: liquidDrift 9s ease-in-out infinite reverse;
+  }
+
+  /* Gradiente Âmbar Dourado Regulatória */
+  .title-liquid-gold {
+    background: linear-gradient(135deg, #ffffff 0%, #fef08a 30%, #f59e0b 70%, #d97706 100%);
+    background-size: 220% 220%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.03em;
+    animation: liquidDrift 11s ease-in-out infinite;
+  }
+
+  /* Títulos sólidos no tema claro: prioridade sobre os gradientes de alto brilho. */
+  [data-theme="light"] .title-liquid-platinum {
+    background: none !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    filter: none !important;
+  }
+
+  [data-theme="light"] .title-liquid-cyan {
+    background: none !important;
+    color: #0369a1 !important;
+    -webkit-text-fill-color: #0369a1 !important;
+    filter: none !important;
+  }
+
+  [data-theme="light"] .title-liquid-gold {
+    background: none !important;
+    color: #92400e !important;
+    -webkit-text-fill-color: #92400e !important;
+    filter: none !important;
+  }
+
+  /* Deriva cinética do gradiente (camada 38 DS-100) — GPU, só background-position */
+  @keyframes liquidDrift {
+    0%, 100% { background-position: 0% 40%; }
+    50% { background-position: 100% 60%; }
+  }
+
+  /* Eyebrow Editorial de Alta Precisão (Base Estrutural Flexível) */
+  .editorial-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  }
+
+  /* Variante Escura (Para Hero, Seções Dark Glass e Alertas Noturnos) */
+  .editorial-eyebrow-dark {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  /* Variante Clara (Para Seções Brancas, Clean Surface e Fundo Neutro) */
+  .editorial-eyebrow-light {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(203, 213, 225, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  /* Selo de Telemetria Regulatória Federal (Base Estrutural Flexível) */
+  .telemetry-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.3rem 0.7rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  }
+
+  /* Telemetria para Tema Escuro */
+  .telemetry-badge-dark {
+    background: rgba(10, 15, 26, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Telemetria para Tema Claro */
+  .telemetry-badge-light {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 1px 2px rgba(15, 23, 42, 0.04);
+  }
+
+  /* Ponto de Telemetria com Radar Pulsante */
+  .telemetry-dot {
+    position: relative;
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+  }
+
+  .telemetry-dot::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: inherit;
+    opacity: 0.75;
+    animation: telemetryPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes telemetryPing {
+    75%, 100% {
+      transform: scale(2.6);
+      opacity: 0;
+    }
+  }
+
+  /* ==========================================================================
+     CAMADA 6: 3D PERSPECTIVE TILT PHYSICS & KINETIC MICRO-INTERACTIONS
+     ========================================================================== */
+  [data-tilt] {
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [data-tilt]:hover {
+    transition: transform 0.08s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  }
+
+  /* Profundidade Parallax Interna para Cards 3D */
+  [data-tilt] .tilt-depth-lg {
+    transform: translateZ(24px);
+  }
+
+  [data-tilt] .tilt-depth-md {
+    transform: translateZ(14px);
+  }
+
+  [data-tilt] .tilt-depth-sm {
+    transform: translateZ(8px);
+  }
+
+  /* Micro-interação inercial para crachás de telemetria */
+  .telemetry-badge:hover,
+  .editorial-eyebrow:hover {
+    transform: translateY(-1.5px);
+  }
+
+  /* Atração magnética tátil inercial */
+  [data-magnetic] {
+    will-change: transform;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Header Intelligent Scrolled State */
+  header.is-scrolled nav {
+    background-color: rgba(10, 15, 26, 0.95);
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(59, 130, 246, 0.2);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  /* Senior UX/UI Standard: Action buttons must never wrap lines */
+  button[type="submit"],
+  [data-magnetic],
+  .dossie-tab-btn {
+    white-space: nowrap;
+  }
+
+  /* Micro-interactions: Button press feedback */
+  button:active, a:active {
+    transform: scale(0.98);
+  }
+
+  /* ==========================================================================
+     SISTEMA DE TIPOGRAFIA EDITORIAL PARA O BLOG (EDITORIAL PROSE ENGINE)
+     ========================================================================== */
+  .editorial-article-body {
+    font-family: 'Inter', sans-serif;
+    color: #334155;
+    font-size: 1.125rem;
+    line-height: 1.85;
+  }
+
+  .editorial-article-body p {
+    margin-bottom: 1.75rem;
+    color: #334155;
+    line-height: 1.85;
+  }
+
+  .editorial-article-body h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.025em;
+    margin-top: 3.25rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1rem;
+    border-left: 4px solid #2563eb;
+    line-height: 1.35;
+  }
+
+  @media (min-width: 640px) {
+    .editorial-article-body h2 {
+      font-size: 1.85rem;
+    }
+  }
+
+  .editorial-article-body h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+    margin-top: 2.25rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .editorial-article-body strong {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .editorial-article-body em {
+    color: #1e293b;
+    font-style: italic;
+  }
+
+  .editorial-article-body blockquote {
+    position: relative;
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem 1.75rem 2.25rem;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(254, 243, 199, 0.35) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-left: 5px solid #d97706;
+    border-radius: 0.75rem 1.25rem 1.25rem 0.75rem;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: #78350f;
+    box-shadow: 0 8px 24px -4px rgba(245, 158, 11, 0.1);
+  }
+
+  .editorial-article-body blockquote::before {
+    content: '“';
+    position: absolute;
+    top: -0.5rem;
+    left: 0.75rem;
+    font-size: 3.5rem;
+    font-family: Georgia, serif;
+    color: rgba(217, 119, 6, 0.25);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .editorial-article-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.75rem 0 2.25rem 0;
+  }
+
+  .editorial-article-body ul li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #334155;
+  }
+
+  .editorial-article-body ul li::before {
+    content: '';
+    position: absolute;
+    left: 0.35rem;
+    top: 0.65rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background-color: #2563eb;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+  }
+
+  .editorial-article-body ol {
+    counter-reset: article-counter;
+    list-style: none;
+    padding-left: 0;
+    margin: 1.75rem 0 2.25rem 0;
+  }
+
+  .editorial-article-body ol li {
+    counter-increment: article-counter;
+    position: relative;
+    padding-left: 2.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: #334155;
+  }
+
+  .editorial-article-body ol li::before {
+    content: counter(article-counter);
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    font-weight: 700;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .editorial-article-body a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+  }
+
+  .editorial-article-body a:hover {
+    color: #1d4ed8;
+  }
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .cinematic-grain, .aurora-mesh-orb, .btn-shimmer::after, .btn-shimmer-auto::after, [data-spotlight]::before, .telemetry-dot::after, [data-tilt] {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   CAMADA 12 (DS-100): TIPOGRAFIA FLUIDA SITE-WIDE — sem saltos entre telas.
+   Regra UNLAYERED (vence as utilities do Tailwind) aplicada a todo H1 de
+   página: 40px no mobile compacto → 72px no desktop, interpolação contínua.
+   ========================================================================== */
+main h1 {
+  font-size: clamp(2.5rem, 1.75rem + 3.75vw, 4.5rem);
+  line-height: 1.06;
+  text-wrap: balance;
+}
